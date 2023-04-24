@@ -1,0 +1,1660 @@
+ body{
+  
+    background-image: url(img/fundo-abstrato-espaco-3d-com-paisagem-de-wireframe.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+     color: white;
+     margin: 0;
+     padding: 0;
+     font-family: 'Poppins', sans-serif;
+     height: 100%;
+     width: 100%;
+    overflow-x: hidden;
+    animation:ani 2s linear reverse;
+   
+   
+
+}
+
+
+
+header{
+     width: 100%;
+    background-color: rgba(37, 34, 44, 0.534);
+    padding-bottom: 30px;
+    padding-top: 30px;
+   
+
+}
+
+.btn button {
+    width: 10px;
+}
+.caixa1{
+    
+    display: flex;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: 1.5s;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.347);
+    justify-content: center;
+}
+
+
+.caixa1 img{
+   display: flex;
+    height: 200px;
+    width: 200px;
+    margin-right: 550px;
+    margin-top: 190px;
+    border-radius: 150px;
+    animation-name: ani;
+    animation:ani 2s linear reverse;
+
+}
+.a{
+    margin-top: -250px;
+}
+.items{
+    
+    margin-top: -150px;
+   
+}
+.items img:hover{
+    transform: scale(0.8);
+    transition: 1s;
+}
+
+.menu{
+    
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+   
+    
+
+}
+.menu a{
+    color:white;
+    text-decoration: none;
+    font-size: 25px;
+    margin-left: 15px;
+    padding-top: 10px;
+    transform: scale(0.8);
+    transition: 0.5s;
+    
+
+}
+.menu a:hover{
+    color:white;
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.N1{
+    padding-right: 15px;
+}
+.n2{
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 10px;
+      
+}
+.n3{
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 10px;
+    background-color: rgb(222, 75, 99);
+}
+.img1 img{
+    width: 55px;
+}
+
+.img1 img:hover{
+    transform: scale(1.1);
+}
+
+
+#titulo{
+    color: white;
+    animation-name: ani;
+    animation:ani 2s linear reverse;
+    text-align: center;
+    margin-top: -60PX;
+}
+#titulo img{
+   margin-left: 250px;
+   margin-top: -70px;
+    width: 50px;
+
+}
+
+@keyframes ani{
+  to{
+ 
+  transform: translateX(-1890px);
+  transition: 1s;
+  
+  }
+ from{
+   
+   transform: translateX(0px);
+   transition: 2s;
+ }
+
+}
+
+.menu-r{
+    display: flex;
+    justify-content: right;
+    margin-right: 50px;
+}
+.menu-r img{
+    cursor: pointer;
+    width: 50px;
+    border-radius: 10px;
+    border-width: 2px;
+  
+   
+}
+
+.menu-r img:hover{
+   
+transform: scale(1.1);
+transition: 1s;
+}
+
+.titulo2 h1{
+    display: flex;
+    text-transform: uppercase;
+   
+}
+.titulo2{
+
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+    color: rgb(255, 255, 255);
+    
+}
+.email{
+    display: flex;
+    justify-content: center;
+}
+.email img{
+   
+    margin-left: 260px;
+    margin-top: -755px;
+    width: 50px;
+    height: 50px;
+}
+
+.whatsapp{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.whatsapp img{
+    margin-top: -650px;
+    margin-right: 150px;
+    width: 150px;
+  
+}
+.whatsapp img:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.email5{
+    display: flex;
+    justify-content: center;
+}
+
+.email5 img{
+    margin-top: -650px;
+    margin-left: 220px;
+    width: 150px;
+    
+}
+.email5 img:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+ .menu-r button{
+    background: transparent;
+ } 
+ @media (min-width:375px) and (max-width:667px){
+
+    body{
+  
+        background-image: url(img/fundo-abstrato-espaco-3d-com-paisagem-de-wireframe.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+         color: white;
+         margin: 0;
+         padding: 0;
+         font-family: 'Poppins', sans-serif;
+         height: 100%;
+         width: 100%;
+        overflow-x: hidden;
+        animation:ani 2s linear reverse;
+         
+       
+    
+    }
+    
+    
+    header{
+         width: 100%;
+        background-color: rgba(37, 34, 44, 0.534);
+        padding-bottom: 30px;
+        padding-top: 30px;
+       
+    
+    }
+    
+    .btn button {
+        width: 10px;
+    }
+    .caixa1{
+        
+        display: flex;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        transition: 1.5s;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.347);
+        justify-content: center;
+    }
+    
+    
+    .caixa1 img{
+       display: flex;
+        height: 200px;
+        width: 200px;
+        margin-right: 550px;
+        margin-top: 190px;
+        border-radius: 150px;
+        animation-name: ani;
+        animation:ani 2s linear reverse;
+    
+    }
+    .a{
+        margin-top: -250px;
+    }
+    .items{
+        
+        margin-top: -150px;
+       
+    }
+    .items img:hover{
+        transform: scale(0.8);
+        transition: 1s;
+    }
+    
+    .menu{
+        
+        display: flex;
+        justify-content: center;
+        visibility: hidden;
+       
+       
+        
+    
+    }
+    .menu a{
+        color:white;
+        text-decoration: none;
+        font-size: 20px;
+        margin-left: 15px;
+        padding-top: 10px;
+        transform: scale(0.8);
+        transition: 0.5s;
+        
+    
+    }
+    .menu a:hover{
+        color:white;
+        transform: scale(1.1);
+        transition: 1s;
+    }
+    
+    .N1{
+        padding-right: 15px;
+    }
+    .n2{
+        padding-right: 15px;
+        padding-left: 15px;
+        border-radius: 10px;
+          
+    }
+    .n3{
+        padding-right: 15px;
+        padding-left: 15px;
+        border-radius: 10px;
+        background-color: rgb(222, 75, 99);
+    }
+    .img1 img{
+        width: 55px;
+    }
+    
+    .img1 img:hover{
+        transform: scale(1.1);
+    }
+    
+    
+    #titulo{
+        color: white;
+        animation-name: ani;
+        animation:ani 2s linear reverse;
+        text-align: center;
+        margin-top: -60PX;
+        margin-right: 150px;
+    }
+    #titulo img{
+       margin-left: 210px;
+       margin-top: -65px;
+        width: 40px;
+    
+    }
+    
+    @keyframes ani{
+      to{
+     
+      transform: translateX(-1890px);
+      transition: 1s;
+      
+      }
+     from{
+       
+       transform: translateX(0px);
+       transition: 2s;
+     }
+    
+    }
+    
+    .menu-r{
+        display: flex;
+        justify-content: right;
+        margin-right: 50px;
+    }
+    .menu-r img{
+        cursor: pointer;
+        width: 50px;
+        border-radius: 10px;
+        border-width: 2px;
+      
+       
+    }
+    
+    .menu-r img:hover{
+       
+    transform: scale(1.1);
+    transition: 1s;
+    }
+    
+    .titulo2 h1{
+        display: flex;
+        text-transform: uppercase;
+       
+    }
+    .titulo2{
+    
+        display: flex;
+        justify-content: center;
+        margin-top: 150px;
+        color: rgb(255, 255, 255);
+        
+    }
+    .email{
+        display: flex;
+        justify-content: center;
+    }
+    .email img{
+       
+        margin-left: 260px;
+        margin-top: -655px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .whatsapp{
+        display: flex;
+        justify-content: center;
+        
+    }
+    
+    .whatsapp img{
+        margin-top: -550px;
+        margin-right: 150px;
+        width: 150px;
+      
+    }
+    .whatsapp img:hover{
+        transform: scale(1.1);
+        transition: 0.5s;
+    }
+    
+    .email5{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .email5 img{
+        margin-top: -550px;
+        margin-left: 220px;
+        width: 150px;
+        
+    }
+    .email5 img:hover{
+        transform: scale(1.1);
+        transition: 0.5s;
+    }
+    
+     .menu-r button{
+        background: transparent;
+     } 
+    
+     
+     
+    
+ }
+
+ 
+ @media (min-width:414px) and (max-width:896px){
+
+    body{
+  
+        background-image: url(img/fundo-abstrato-espaco-3d-com-paisagem-de-wireframe.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+         color: white;
+         margin: 0;
+         padding: 0;
+         font-family: 'Poppins', sans-serif;
+         height: 100%;
+         width: 100%;
+        overflow-x: hidden;
+        animation:ani 2s linear reverse;
+         
+       
+    
+    }
+    
+    
+    header{
+         width: 100%;
+        background-color: rgba(37, 34, 44, 0.534);
+        padding-bottom: 30px;
+        padding-top: 30px;
+       
+    
+    }
+    
+    .btn button {
+        width: 10px;
+    }
+    .caixa1{
+        
+        display: flex;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        transition: 1.5s;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.347);
+        justify-content: center;
+    }
+    
+    
+    .caixa1 img{
+       display: flex;
+        height: 200px;
+        width: 200px;
+        margin-right: 550px;
+        margin-top: 190px;
+        border-radius: 150px;
+        animation-name: ani;
+        animation:ani 2s linear reverse;
+    
+    }
+    .a{
+        margin-top: -250px;
+    }
+    .items{
+        
+        margin-top: -150px;
+       
+    }
+    .items img:hover{
+        transform: scale(0.8);
+        transition: 1s;
+    }
+    
+    .menu{
+        
+        display: flex;
+        justify-content: center;
+        visibility: hidden;
+       
+       
+        
+    
+    }
+    .menu a{
+        color:white;
+        text-decoration: none;
+        font-size: 20px;
+        margin-left: 15px;
+        padding-top: 10px;
+        transform: scale(0.8);
+        transition: 0.5s;
+        
+    
+    }
+    .menu a:hover{
+        color:white;
+        transform: scale(1.1);
+        transition: 1s;
+    }
+    
+    .N1{
+        padding-right: 15px;
+    }
+    .n2{
+        padding-right: 15px;
+        padding-left: 15px;
+        border-radius: 10px;
+          
+    }
+    .n3{
+        padding-right: 15px;
+        padding-left: 15px;
+        border-radius: 10px;
+        background-color: rgb(222, 75, 99);
+    }
+    .img1 img{
+        width: 55px;
+    }
+    
+    .img1 img:hover{
+        transform: scale(1.1);
+    }
+    
+    
+    #titulo{
+        color: white;
+        animation-name: ani;
+        animation:ani 2s linear reverse;
+        text-align: center;
+        margin-top: -60PX;
+        margin-right: 150px;
+    }
+    #titulo img{
+       margin-left: 225px;
+       margin-top: -65px;
+        width: 40px;
+    
+    }
+    
+    @keyframes ani{
+      to{
+     
+      transform: translateX(-1890px);
+      transition: 1s;
+      
+      }
+     from{
+       
+       transform: translateX(0px);
+       transition: 2s;
+     }
+    
+    }
+    
+    .menu-r{
+        display: flex;
+        justify-content: right;
+        margin-right: 50px;
+    }
+    .menu-r img{
+        cursor: pointer;
+        width: 50px;
+        border-radius: 10px;
+        border-width: 2px;
+      
+       
+    }
+    
+    .menu-r img:hover{
+       
+    transform: scale(1.1);
+    transition: 1s;
+    }
+    
+    .titulo2 h1{
+        display: flex;
+        text-transform: uppercase;
+       
+    }
+    .titulo2{
+    
+        display: flex;
+        justify-content: center;
+        margin-top: 150px;
+        color: rgb(255, 255, 255);
+        
+    }
+    .email{
+        display: flex;
+        justify-content: center;
+    }
+    .email img{
+       
+        margin-left: 260px;
+        margin-top: -885px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .whatsapp{
+        display: flex;
+        justify-content: center;
+        
+    }
+    
+    .whatsapp img{
+        margin-top: -750px;
+        margin-right: 150px;
+        width: 150px;
+      
+    }
+    .whatsapp img:hover{
+        transform: scale(1.1);
+        transition: 0.5s;
+    }
+    
+    .email5{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .email5 img{
+        margin-top: -750px;
+        margin-left: 220px;
+        width: 150px;
+        
+    }
+    .email5 img:hover{
+        transform: scale(1.1);
+        transition: 0.5s;
+    }
+    
+     .menu-r button{
+        background: transparent;
+     } 
+    
+     
+     
+    
+ }
+
+ @media (min-width:390px) and (max-width:844px){
+
+    body{
+  
+        background-image: url(img/fundo-abstrato-espaco-3d-com-paisagem-de-wireframe.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+         color: white;
+         margin: 0;
+         padding: 0;
+         font-family: 'Poppins', sans-serif;
+         height: 100%;
+         width: 100%;
+        overflow-x: hidden;
+        animation:ani 2s linear reverse;
+         
+       
+    
+    }
+    
+    
+    header{
+         width: 100%;
+        background-color: rgba(37, 34, 44, 0.534);
+        padding-bottom: 30px;
+        padding-top: 30px;
+       
+    
+    }
+    
+    .btn button {
+        width: 10px;
+    }
+    .caixa1{
+        
+        display: flex;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        transition: 1.5s;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.347);
+        justify-content: center;
+    }
+    
+    
+    .caixa1 img{
+       display: flex;
+        height: 200px;
+        width: 200px;
+        margin-right: 550px;
+        margin-top: 190px;
+        border-radius: 150px;
+        animation-name: ani;
+        animation:ani 2s linear reverse;
+    
+    }
+    .a{
+        margin-top: -250px;
+    }
+    .items{
+        
+        margin-top: -150px;
+       
+    }
+    .items img:hover{
+        transform: scale(0.8);
+        transition: 1s;
+    }
+    
+    .menu{
+        
+        display: flex;
+        justify-content: center;
+        visibility: hidden;
+       
+       
+        
+    
+    }
+    .menu a{
+        color:white;
+        text-decoration: none;
+        font-size: 20px;
+        margin-left: 15px;
+        padding-top: 10px;
+        transform: scale(0.8);
+        transition: 0.5s;
+        
+    
+    }
+    .menu a:hover{
+        color:white;
+        transform: scale(1.1);
+        transition: 1s;
+    }
+    
+    .N1{
+        padding-right: 15px;
+    }
+    .n2{
+        padding-right: 15px;
+        padding-left: 15px;
+        border-radius: 10px;
+          
+    }
+    .n3{
+        padding-right: 15px;
+        padding-left: 15px;
+        border-radius: 10px;
+        background-color: rgb(222, 75, 99);
+    }
+    .img1 img{
+        width: 55px;
+    }
+    
+    .img1 img:hover{
+        transform: scale(1.1);
+    }
+    
+    
+    #titulo{
+        color: white;
+        animation-name: ani;
+        animation:ani 2s linear reverse;
+        text-align: center;
+        margin-top: -60PX;
+        margin-right: 150px;
+    }
+    #titulo img{
+       margin-left: 220px;
+       margin-top: -65px;
+        width: 40px;
+    
+    }
+    
+    @keyframes ani{
+      to{
+     
+      transform: translateX(-1890px);
+      transition: 1s;
+      
+      }
+     from{
+       
+       transform: translateX(0px);
+       transition: 2s;
+     }
+    
+    }
+    
+    .menu-r{
+        display: flex;
+        justify-content: right;
+        margin-right: 50px;
+    }
+    .menu-r img{
+        cursor: pointer;
+        width: 50px;
+        border-radius: 10px;
+        border-width: 2px;
+      
+       
+    }
+    
+    .menu-r img:hover{
+       
+    transform: scale(1.1);
+    transition: 1s;
+    }
+    
+    .titulo2 h1{
+        display: flex;
+        text-transform: uppercase;
+       
+    }
+    .titulo2{
+    
+        display: flex;
+        justify-content: center;
+        margin-top: 150px;
+        color: rgb(255, 255, 255);
+        
+    }
+    .email{
+        display: flex;
+        justify-content: center;
+    }
+    .email img{
+       
+        margin-left: 260px;
+        margin-top: -825px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .whatsapp{
+        display: flex;
+        justify-content: center;
+        
+    }
+    
+    .whatsapp img{
+        margin-top: -750px;
+        margin-right: 150px;
+        width: 150px;
+      
+    }
+    .whatsapp img:hover{
+        transform: scale(1.1);
+        transition: 0.5s;
+    }
+    
+    .email5{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .email5 img{
+        margin-top: -750px;
+        margin-left: 220px;
+        width: 150px;
+        
+    }
+    .email5 img:hover{
+        transform: scale(1.1);
+        transition: 0.5s;
+    }
+    
+     .menu-r button{
+        background: transparent;
+     } 
+     
+     
+    
+ }
+
+ @media (min-width:412px) and (max-width:915px){
+
+    body{
+  
+        background-image: url(img/fundo-abstrato-espaco-3d-com-paisagem-de-wireframe.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+         color: white;
+         margin: 0;
+         padding: 0;
+         font-family: 'Poppins', sans-serif;
+         height: 100%;
+         width: 100%;
+        overflow-x: hidden;
+        animation:ani 2s linear reverse;
+         
+       
+    
+    }
+    
+    
+    header{
+         width: 100%;
+        background-color: rgba(37, 34, 44, 0.534);
+        padding-bottom: 30px;
+        padding-top: 30px;
+       
+    
+    }
+    
+    .btn button {
+        width: 10px;
+    }
+    .caixa1{
+        
+        display: flex;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        transition: 1.5s;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.347);
+        justify-content: center;
+    }
+    
+    
+    .caixa1 img{
+       display: flex;
+        height: 200px;
+        width: 200px;
+        margin-right: 550px;
+        margin-top: 190px;
+        border-radius: 150px;
+        animation-name: ani;
+        animation:ani 2s linear reverse;
+    
+    }
+    .a{
+        margin-top: -250px;
+    }
+    .items{
+        
+        margin-top: -150px;
+       
+    }
+    .items img:hover{
+        transform: scale(0.8);
+        transition: 1s;
+    }
+    
+    .menu{
+        
+        display: flex;
+        justify-content: center;
+        visibility: hidden;
+       
+       
+        
+    
+    }
+    .menu a{
+        color:white;
+        text-decoration: none;
+        font-size: 20px;
+        margin-left: 15px;
+        padding-top: 10px;
+        transform: scale(0.8);
+        transition: 0.5s;
+        
+    
+    }
+    .menu a:hover{
+        color:white;
+        transform: scale(1.1);
+        transition: 1s;
+    }
+    
+    .N1{
+        padding-right: 15px;
+    }
+    .n2{
+        padding-right: 15px;
+        padding-left: 15px;
+        border-radius: 10px;
+          
+    }
+    .n3{
+        padding-right: 15px;
+        padding-left: 15px;
+        border-radius: 10px;
+        background-color: rgb(222, 75, 99);
+    }
+    .img1 img{
+        width: 55px;
+    }
+    
+    .img1 img:hover{
+        transform: scale(1.1);
+    }
+    
+    
+    #titulo{
+        color: white;
+        animation-name: ani;
+        animation:ani 2s linear reverse;
+        text-align: center;
+        margin-top: -60PX;
+        margin-right: 150px;
+    }
+    #titulo img{
+       margin-left: 230px;
+       margin-top: -65px;
+        width: 40px;
+    
+    }
+    
+    @keyframes ani{
+      to{
+     
+      transform: translateX(-1890px);
+      transition: 1s;
+      
+      }
+     from{
+       
+       transform: translateX(0px);
+       transition: 2s;
+     }
+    
+    }
+    
+    .menu-r{
+        display: flex;
+        justify-content: right;
+        margin-right: 50px;
+    }
+    .menu-r img{
+        cursor: pointer;
+        width: 50px;
+        border-radius: 10px;
+        border-width: 2px;
+      
+       
+    }
+    
+    .menu-r img:hover{
+       
+    transform: scale(1.1);
+    transition: 1s;
+    }
+    
+    .titulo2 h1{
+        display: flex;
+        text-transform: uppercase;
+       
+    }
+    .titulo2{
+    
+        display: flex;
+        justify-content: center;
+        margin-top: 150px;
+        color: rgb(255, 255, 255);
+        
+    }
+    .email{
+        display: flex;
+        justify-content: center;
+    }
+    .email img{
+       
+        margin-left: 260px;
+        margin-top: -895px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .whatsapp{
+        display: flex;
+        justify-content: center;
+        
+    }
+    
+    .whatsapp img{
+        margin-top: -750px;
+        margin-right: 150px;
+        width: 150px;
+      
+    }
+    .whatsapp img:hover{
+        transform: scale(1.1);
+        transition: 0.5s;
+    }
+    
+    .email5{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .email5 img{
+        margin-top: -750px;
+        margin-left: 220px;
+        width: 150px;
+        
+    }
+    .email5 img:hover{
+        transform: scale(1.1);
+        transition: 0.5s;
+    }
+    
+     .menu-r button{
+        background: transparent;
+     } 
+     
+     
+    
+ }
+ @media (min-width:768px) and(max-width:1024px){
+    body{
+  
+        background-image: url(img/fundo-abstrato-espaco-3d-com-paisagem-de-wireframe.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+         color: white;
+         margin: 0;
+         padding: 0;
+         font-family: 'Poppins', sans-serif;
+         height: 100%;
+         width: 100%;
+        overflow-x: hidden;
+        animation:ani 2s linear reverse;
+         
+       
+    
+    }
+    
+    
+    header{
+         width: 100%;
+        background-color: rgba(37, 34, 44, 0.534);
+        padding-bottom: 30px;
+        padding-top: 30px;
+       
+    
+    }
+    
+    .btn button {
+        width: 10px;
+    }
+    .caixa1{
+        
+        display: flex;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        transition: 1.5s;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.347);
+        justify-content: center;
+    }
+    
+    
+    .caixa1 img{
+       display: flex;
+        height: 200px;
+        width: 200px;
+        margin-right: 550px;
+        margin-top: 190px;
+        border-radius: 150px;
+        animation-name: ani;
+        animation:ani 2s linear reverse;
+    
+    }
+    .a{
+        margin-top: -250px;
+    }
+    .items{
+        
+        margin-top: -150px;
+       
+    }
+    .items img:hover{
+        transform: scale(0.8);
+        transition: 1s;
+    }
+    
+    .menu{
+        
+        display: flex;
+        justify-content: center;
+        visibility: hidden;
+       
+        
+    
+    }
+    .menu a{
+        color:white;
+        text-decoration: none;
+        font-size: 25px;
+        margin-left: 15px;
+        padding-top: 10px;
+        transform: scale(0.8);
+        transition: 0.5s;
+        
+    
+    }
+    .menu a:hover{
+        color:white;
+        transform: scale(1.1);
+        transition: 1s;
+    }
+    
+    .N1{
+        padding-right: 15px;
+    }
+    .n2{
+        padding-right: 15px;
+        padding-left: 15px;
+        border-radius: 10px;
+          
+    }
+    .n3{
+        padding-right: 15px;
+        padding-left: 15px;
+        border-radius: 10px;
+        background-color: rgb(222, 75, 99);
+    }
+    .img1 img{
+        width: 55px;
+    }
+    
+    .img1 img:hover{
+        transform: scale(1.1);
+    }
+    
+    
+    #titulo{
+        color: white;
+        animation-name: ani;
+        animation:ani 2s linear reverse;
+        text-align: center;
+        margin-top: -60PX;
+    }
+    #titulo img{
+       margin-left: 250px;
+       margin-top: -70px;
+        width: 50px;
+    
+    }
+    
+    @keyframes ani{
+      to{
+     
+      transform: translateX(-1890px);
+      transition: 1s;
+      
+      }
+     from{
+       
+       transform: translateX(0px);
+       transition: 2s;
+     }
+    
+    }
+    
+    .menu-r{
+        display: flex;
+        justify-content: right;
+        margin-right: 50px;
+    }
+    .menu-r img{
+        cursor: pointer;
+        width: 50px;
+        border-radius: 10px;
+        border-width: 2px;
+      
+       
+    }
+    
+    .menu-r img:hover{
+       
+    transform: scale(1.1);
+    transition: 1s;
+    }
+    
+    .titulo2 h1{
+        display: flex;
+        text-transform: uppercase;
+       
+    }
+    .titulo2{
+    
+        display: flex;
+        justify-content: center;
+        margin-top: 150px;
+        color: rgb(255, 255, 255);
+        
+    }
+    .email{
+        display: flex;
+        justify-content: center;
+    }
+    .email img{
+       
+        margin-left: 260px;
+        margin-top: -755px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .whatsapp{
+        display: flex;
+        justify-content: center;
+        
+    }
+    
+    .whatsapp img{
+        margin-top: -650px;
+        margin-right: 150px;
+        width: 150px;
+      
+    }
+    .whatsapp img:hover{
+        transform: scale(1.1);
+        transition: 0.5s;
+    }
+    
+    .email5{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .email5 img{
+        margin-top: -650px;
+        margin-left: 220px;
+        width: 150px;
+        
+    }
+    .email5 img:hover{
+        transform: scale(1.1);
+        transition: 0.5s;
+    }
+    
+     .menu-r button{
+        background: transparent;
+     } 
+    
+ }
+
+
+ @media (max-width:1366px) and (min-width:768px) {
+    body{
+  
+        background-image: url(img/fundo-abstrato-espaco-3d-com-paisagem-de-wireframe.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+         color: white;
+         margin: 0;
+         padding: 0;
+         font-family: 'Poppins', sans-serif;
+         height: 100%;
+         width: 100%;
+        overflow-x: hidden;
+        animation:ani 2s linear reverse;
+         
+       
+    
+    }
+    
+    
+    header{
+         width: 100%;
+        background-color: rgba(37, 34, 44, 0.534);
+        padding-bottom: 30px;
+        padding-top: 30px;
+       
+    
+    }
+    
+    .btn button {
+        width: 10px;
+    }
+    .caixa1{
+        
+        display: flex;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        transition: 1.5s;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.347);
+        justify-content: center;
+    }
+    
+    
+    .caixa1 img{
+       display: flex;
+        height: 200px;
+        width: 200px;
+        margin-right: 550px;
+        margin-top: 190px;
+        border-radius: 150px;
+        animation-name: ani;
+        animation:ani 2s linear reverse;
+    
+    }
+    .a{
+        margin-top: -250px;
+    }
+    .items{
+        
+        margin-top: -150px;
+       
+    }
+    .items img:hover{
+        transform: scale(0.8);
+        transition: 1s;
+    }
+    
+    .menu{
+        
+        display: flex;
+        justify-content: center;
+        visibility: hidden;
+       
+        
+    
+    }
+    .menu a{
+        color:white;
+        text-decoration: none;
+        font-size: 25px;
+        margin-left: 15px;
+        padding-top: 10px;
+        transform: scale(0.8);
+        transition: 0.5s;
+        
+    
+    }
+    .menu a:hover{
+        color:white;
+        transform: scale(1.1);
+        transition: 1s;
+    }
+    
+    .N1{
+        padding-right: 15px;
+    }
+    .n2{
+        padding-right: 15px;
+        padding-left: 15px;
+        border-radius: 10px;
+          
+    }
+    .n3{
+        padding-right: 15px;
+        padding-left: 15px;
+        border-radius: 10px;
+        background-color: rgb(222, 75, 99);
+    }
+    .img1 img{
+        width: 55px;
+    }
+    
+    .img1 img:hover{
+        transform: scale(1.1);
+    }
+    
+    
+    #titulo{
+        color: white;
+        animation-name: ani;
+        animation:ani 2s linear reverse;
+        text-align: center;
+        margin-top: -60PX;
+    }
+    #titulo img{
+       margin-left: 250px;
+       margin-top: -70px;
+        width: 50px;
+    
+    }
+    
+    @keyframes ani{
+      to{
+     
+      transform: translateX(-1890px);
+      transition: 1s;
+      
+      }
+     from{
+       
+       transform: translateX(0px);
+       transition: 2s;
+     }
+    
+    }
+    
+    .menu-r{
+        display: flex;
+        justify-content: right;
+        margin-right: 50px;
+    }
+    .menu-r img{
+        cursor: pointer;
+        width: 50px;
+        border-radius: 10px;
+        border-width: 2px;
+      
+       
+    }
+    
+    .menu-r img:hover{
+       
+    transform: scale(1.1);
+    transition: 1s;
+    }
+    
+    .titulo2 h1{
+        display: flex;
+        text-transform: uppercase;
+       
+    }
+    .titulo2{
+    
+        display: flex;
+        justify-content: center;
+        margin-top: 150px;
+        color: rgb(255, 255, 255);
+        
+    }
+    .email{
+        display: flex;
+        justify-content: center;
+    }
+    .email img{
+       
+        margin-left: 260px;
+        margin-top: -485px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .whatsapp{
+        display: flex;
+        justify-content: center;
+        
+    }
+    
+    .whatsapp img{
+        margin-top: -350px;
+        margin-right: 150px;
+        width: 150px;
+      
+    }
+    .whatsapp img:hover{
+        transform: scale(1.1);
+        transition: 0.5s;
+    }
+    
+    .email5{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .email5 img{
+        margin-top: -350px;
+        margin-left: 220px;
+        width: 150px;
+        
+    }
+    .email5 img:hover{
+        transform: scale(1.1);
+        transition: 0.5s;
+    }
+    
+     .menu-r button{
+        background: transparent;
+     } 
+    
+    
+ }
+
+ 
