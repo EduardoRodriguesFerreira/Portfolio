@@ -1,97 +1,820 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Eduardo Rodrigues - Analista de Dados e Desenvolvedor Full Stack">
+    <meta name="author" content="Eduardo Rodrigues">
+    <title>Eduardo Rodrigues | Analista de Dados & Full Stack Developer</title>
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&family=Righteous&family=Roboto+Serif:wght@100&display=swap" rel="stylesheet">
-    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<body id="corpo">
-    <header class="cabeçalho">
+<body>
+    <!-- Header/Navbar -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#home" class="nav__logo">
+                <i class="fas fa-code"></i>
+                <span>Eduardo</span>
+            </a>
 
-         <div class="menu-r" id="logo">
-           <button><img src="img/Menu-80_icon-icons.com_57300.png" alt=""></button> 
-         </div>
-         <div id="titulo">
-            <h1>Bem-Vindo</h1>
-            <img src="img/icone-dev.webp" alt="">
-          </div>
-        <div class="menu" id="menu">
-            
-            <div class="img1">
-                <img src="img/252066.png" alt="">
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">
+                            <i class="fas fa-home"></i>
+                            <span>Início</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">
+                            <i class="fas fa-user"></i>
+                            <span>Sobre</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link">
+                            <i class="fas fa-laptop-code"></i>
+                            <span>Skills</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#experience" class="nav__link">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Experiência</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#projects" class="nav__link">
+                            <i class="fas fa-folder-open"></i>
+                            <span>Projetos</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contato</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <i class="fas fa-times nav__close" id="nav-close"></i>
             </div>
 
-            <a href="index.html" class="N1">Inicio </a>
-      
-            <a href="projetos.html" class="n2">Projetos/Redes sociais</a>
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
 
-            <a href="contato.html" class="n3">Contato</a>
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="home section" id="home">
+            <div class="home__container container grid">
+                <div class="home__content">
+                    <div class="home__data">
+                        <h3 class="home__subtitle">Olá, eu sou</h3>
+                        <h1 class="home__title">Eduardo Rodrigues</h1>
+                        <h2 class="home__profession">
+                            <span class="typing-text"></span>
+                            <span class="cursor">|</span>
+                        </h2>
+                        <p class="home__description">
+                            Analista de Dados e Desenvolvedor Full Stack especializado em automação, 
+                            integração de dados, APIs e desenvolvimento de dashboards. 
+                            Experiência em soluções end-to-end desde ETL até interfaces web responsivas.
+                        </p>
+
+                        <div class="home__buttons">
+                            <a href="#contact" class="button button--primary">
+                                <i class="fas fa-paper-plane"></i>
+                                Entre em Contato
+                            </a>
+                            <a href="#projects" class="button button--outline">
+                                <i class="fas fa-folder-open"></i>
+                                Ver Projetos
+                            </a>
+                        </div>
+
+                        <div class="home__social">
+                            <a href="https://github.com/EduardoRodriguesFerreira" target="_blank" class="home__social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/eduardo-rodrigues-03213b1b7/" target="_blank" class="home__social-link">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:eduardorodriguesferreira1240@gmail.com" class="home__social-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="home__img">
+                    <div class="home__blob">
+                        <img src="img/foto.jpeg" alt="Eduardo Rodrigues">
+                    </div>
+                </div>
+            </div>
+
+            <div class="home__scroll">
+                <a href="#about" class="home__scroll-button">
+                    <i class="fas fa-mouse"></i>
+                    <span>Scroll Down</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about section" id="about">
+            <div class="section__header">
+                <h2 class="section__title">Sobre Mim</h2>
+                <span class="section__subtitle">Minha Jornada Profissional</span>
+            </div>
+
+            <div class="about__container container grid">
+                <div class="about__content">
+                    <div class="about__info">
+                        <div class="about__box">
+                            <i class="fas fa-award"></i>
+                            <h3>Experiência</h3>
+                            <span>3+ Anos</span>
+                        </div>
+                        <div class="about__box">
+                            <i class="fas fa-briefcase"></i>
+                            <h3>Projetos</h3>
+                            <span>Aplicações Web, Dashboards, Automação</span>
+                        </div>
+                        <div class="about__box">
+                            <i class="fas fa-headset"></i>
+                            <h3>Suporte</h3>
+                            <span>Online</span>
+                        </div>
+                    </div>
+
+                    <div class="about__description">
+                        <p>
+                            Profissional apaixonado por tecnologia e dados com experiência em análise, 
+                            desenvolvimento e automação. Atuo em todas as etapas do ciclo de dados: 
+                            desde a extração e transformação (SQL, ETL, Python) até a visualização 
+                            (Power BI, Dashboards) e desenvolvimento de sistemas web.
+                        </p>
+                        <p>
+                            Atualmente trabalhando na <strong>ACFS Consultores</strong> desenvolvendo 
+                            soluções completas de dados e web, incluindo implantação de infraestrutura 
+                            (DNS, hospedagem, publicação). Graduado em Análise e Desenvolvimento de 
+                            Sistemas pelo Centro Universitário ENIAC.
+                        </p>
+                    </div>
+
+                    <a href="/Curriculo_Eduardo_Rodrigues.pdf" download class="button button--primary">
+                        <i class="fas fa-download"></i>
+                        Download CV
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills section" id="skills">
+            <div class="section__header">
+                <h2 class="section__title">Competências Técnicas</h2>
+                <span class="section__subtitle">Tecnologias que Domino</span>
+            </div>
+
+            <div class="skills__container container grid">
+                <!-- Data & BI -->
+                <div class="skills__content">
+                    <div class="skills__header">
+                        <i class="fas fa-chart-bar skills__icon"></i>
+                        <div>
+                            <h3 class="skills__title">Dados & BI</h3>
+                            <span class="skills__subtitle">Análise e Visualização</span>
+                        </div>
+                        <i class="fas fa-chevron-down skills__arrow"></i>
+                    </div>
+
+                    <div class="skills__list">
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Power BI (DAX, Power Query)</span>
+                            </div>
+                            <span class="skills__percentage">95%</span>
+                            <div class="skills__bar">
+                                <span class="skills__fill" style="width: 95%"></span>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class="fas fa-database"></i>
+                                <span>SQL Server / Azure SQL</span>
+                            </div>
+                            <span class="skills__percentage">90%</span>
+                            <div class="skills__bar">
+                                <span class="skills__fill" style="width: 90%"></span>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class="fas fa-file-excel"></i>
+                                <span>Excel Avançado</span>
+                            </div>
+                            <span class="skills__percentage">85%</span>
+                            <div class="skills__bar">
+                                <span class="skills__fill" style="width: 85%"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Back-end -->
+                <div class="skills__content">
+                    <div class="skills__header">
+                        <i class="fas fa-server skills__icon"></i>
+                        <div>
+                            <h3 class="skills__title">Back-end</h3>
+                            <span class="skills__subtitle">APIs e Servidores</span>
+                        </div>
+                        <i class="fas fa-chevron-down skills__arrow"></i>
+                    </div>
+
+                    <div class="skills__list">
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class="fab fa-python"></i>
+                                <span>Python (Flask, FastAPI)</span>
+                            </div>
+                            <span class="skills__percentage">90%</span>
+                            <div class="skills__bar">
+                                <span class="skills__fill" style="width: 90%"></span>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class="fas fa-code"></i>
+                                <span>C# (.NET)</span>
+                            </div>
+                            <span class="skills__percentage">80%</span>
+                            <div class="skills__bar">
+                                <span class="skills__fill" style="width: 80%"></span>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class="fab fa-node"></i>
+                                <span>Node.js</span>
+                            </div>
+                            <span class="skills__percentage">75%</span>
+                            <div class="skills__bar">
+                                <span class="skills__fill" style="width: 75%"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Front-end -->
+                <div class="skills__content">
+                    <div class="skills__header">
+                        <i class="fas fa-palette skills__icon"></i>
+                        <div>
+                            <h3 class="skills__title">Front-end</h3>
+                            <span class="skills__subtitle">UI & Desenvolvimento Web</span>
+                        </div>
+                        <i class="fas fa-chevron-down skills__arrow"></i>
+                    </div>
+
+                    <div class="skills__list">
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class="fab fa-react"></i>
+                                <span>React / Next.js</span>
+                            </div>
+                            <span class="skills__percentage">85%</span>
+                            <div class="skills__bar">
+                                <span class="skills__fill" style="width: 85%"></span>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class="fab fa-js"></i>
+                                <span>JavaScript / TypeScript</span>
+                            </div>
+                            <span class="skills__percentage">90%</span>
+                            <div class="skills__bar">
+                                <span class="skills__fill" style="width: 90%"></span>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class="fab fa-html5"></i>
+                                <span>HTML5 / CSS3</span>
+                            </div>
+                            <span class="skills__percentage">95%</span>
+                            <div class="skills__bar">
+                                <span class="skills__fill" style="width: 95%"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cloud & Tools -->
+                <div class="skills__content">
+                    <div class="skills__header">
+                        <i class="fas fa-cloud skills__icon"></i>
+                        <div>
+                            <h3 class="skills__title">Cloud & DevOps</h3>
+                            <span class="skills__subtitle">Deploy e Automação</span>
+                        </div>
+                        <i class="fas fa-chevron-down skills__arrow"></i>
+                    </div>
+
+                    <div class="skills__list">
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class="fab fa-microsoft"></i>
+                                <span>Azure (Deploy, DNS)</span>
+                            </div>
+                            <span class="skills__percentage">80%</span>
+                            <div class="skills__bar">
+                                <span class="skills__fill" style="width: 80%"></span>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class="fab fa-git-alt"></i>
+                                <span>Git / GitHub</span>
+                            </div>
+                            <span class="skills__percentage">85%</span>
+                            <div class="skills__bar">
+                                <span class="skills__fill" style="width: 85%"></span>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class="fas fa-robot"></i>
+                                <span>Power Automate / ETL</span>
+                            </div>
+                            <span class="skills__percentage">90%</span>
+                            <div class="skills__bar">
+                                <span class="skills__fill" style="width: 90%"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="experience section" id="experience">
+            <div class="section__header">
+                <h2 class="section__title">Experiência Profissional</h2>
+                <span class="section__subtitle">Minha Trajetória</span>
+            </div>
+
+            <div class="experience__container container">
+                <div class="experience__timeline">
+                    <!-- Experience 1 -->
+                    <div class="experience__item">
+                        <div class="experience__marker"></div>
+                        <div class="experience__content">
+                            <div class="experience__header">
+                                <h3 class="experience__title">Analista de Dados / Full Stack</h3>
+                                <span class="experience__company">
+                                    <i class="fas fa-building"></i>
+                                    ACFS Consultores
+                                </span>
+                                <span class="experience__date">
+                                    <i class="fas fa-calendar"></i>
+                                    Ago 2025 - Atual
+                                </span>
+                            </div>
+                            <div class="experience__description">
+                                <ul>
+                                    <li>Desenvolvimento de soluções web e rotinas de dados (relatórios, dashboards e automações)</li>
+                                    <li>Implantação completa de projetos: domínio/DNS, hospedagem e publicação</li>
+                                    <li>Integração de sistemas e APIs para automação de processos</li>
+                                    <li>Criação de dashboards interativos em Power BI com DAX e Power Query</li>
+                                </ul>
+                            </div>
+                            <div class="experience__tags">
+                                <span class="tag">Power BI</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">SQL</span>
+                                <span class="tag">React</span>
+                                <span class="tag">Azure</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2 -->
+                    <div class="experience__item">
+                        <div class="experience__marker"></div>
+                        <div class="experience__content">
+                            <div class="experience__header">
+                                <h3 class="experience__title">Analista de Dados</h3>
+                                <span class="experience__company">
+                                    <i class="fas fa-building"></i>
+                                    Açovisa
+                                </span>
+                                <span class="experience__date">
+                                    <i class="fas fa-calendar"></i>
+                                    Jul 2024 - Mar 2025
+                                </span>
+                            </div>
+                            <div class="experience__description">
+                                <ul>
+                                    <li>Desenvolvimento e otimização de queries SQL para análise de dados</li>
+                                    <li>Criação de dashboards e relatórios executivos em Power BI</li>
+                                    <li>Migração de tabelas e dados usando C# (.NET Systems) com triggers</li>
+                                    <li>Implementação de processos ETL com Power Query (M) e DAX</li>
+                                </ul>
+                            </div>
+                            <div class="experience__tags">
+                                <span class="tag">SQL Server</span>
+                                <span class="tag">Power BI</span>
+                                <span class="tag">C#</span>
+                                <span class="tag">DAX</span>
+                                <span class="tag">ETL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 3 -->
+                    <div class="experience__item">
+                        <div class="experience__marker"></div>
+                        <div class="experience__content">
+                            <div class="experience__header">
+                                <h3 class="experience__title">Programador Junior</h3>
+                                <span class="experience__company">
+                                    <i class="fas fa-building"></i>
+                                    WFLOW INVEST
+                                </span>
+                                <span class="experience__date">
+                                    <i class="fas fa-calendar"></i>
+                                    Jul 2023 - Jul 2024
+                                </span>
+                            </div>
+                            <div class="experience__description">
+                                <ul>
+                                    <li>Desenvolvimento de automações com Python e Power Automate</li>
+                                    <li>Integração de sistemas através de APIs REST</li>
+                                    <li>Suporte e desenvolvimento de relatórios em Power BI</li>
+                                    <li>Otimização de processos internos reduzindo tempo de execução em 80%</li>
+                                </ul>
+                            </div>
+                            <div class="experience__tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Power Automate</span>
+                                <span class="tag">Power BI</span>
+                                <span class="tag">APIs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects section" id="projects">
+            <div class="section__header">
+                <h2 class="section__title">Projetos</h2>
+                <span class="section__subtitle">Meus Trabalhos Recentes</span>
+            </div>
+
+            <div class="projects__container container grid">
+                <!-- Project 1 -->
+                <article class="project__card">
+                    <div class="project__image">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="project__content">
+                        <h3 class="project__title">Dashboard de Análise de Vendas</h3>
+                        <p class="project__description">
+                            Dashboard interativo em Power BI com visualizações dinâmicas, KPIs estratégicos 
+                            e integração com SQL Server. Atualização automática de dados em tempo real.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">Power BI</span>
+                            <span class="tag">DAX</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">Azure</span>
+                        </div>
+                        <div class="project__buttons">
+                            <a href="#" class="project__button">
+                                <i class="fas fa-eye"></i>
+                                Demo
+                            </a>
+                            <a href="#" class="project__button">
+                                <i class="fab fa-github"></i>
+                                Código
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project__card">
+                    <div class="project__image">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="project__content">
+                        <h3 class="project__title">API REST para Integração</h3>
+                        <p class="project__description">
+                            API RESTful desenvolvida em FastAPI para integração de sistemas, com autenticação JWT, 
+                            documentação Swagger automática e deploy em Azure.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Docker</span>
+                        </div>
+                        <div class="project__buttons">
+                            <a href="#" class="project__button">
+                                <i class="fas fa-eye"></i>
+                                Demo
+                            </a>
+                            <a href="#" class="project__button">
+                                <i class="fab fa-github"></i>
+                                Código
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project__card">
+                    <div class="project__image">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="project__content">
+                        <h3 class="project__title">Sistema de Automação</h3>
+                        <p class="project__description">
+                            Sistema que extrai dados, processa com Pandas, gera relatórios Excel e envia 
+                            automaticamente. Redução de 80% no tempo de processamento.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">ETL</span>
+                            <span class="tag">Automação</span>
+                        </div>
+                        <div class="project__buttons">
+                            <a href="#" class="project__button">
+                                <i class="fas fa-eye"></i>
+                                Demo
+                            </a>
+                            <a href="#" class="project__button">
+                                <i class="fab fa-github"></i>
+                                Código
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4 -->
+                <article class="project__card">
+                    <div class="project__image">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <div class="project__content">
+                        <h3 class="project__title">Web App de Visualização</h3>
+                        <p class="project__description">
+                            Aplicação full stack com painel administrativo para visualização de dados. 
+                            Front-end em React e back-end em Flask com API REST.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Flask</span>
+                            <span class="tag">Chart.js</span>
+                            <span class="tag">SQL</span>
+                        </div>
+                        <div class="project__buttons">
+                            <a href="#" class="project__button">
+                                <i class="fas fa-eye"></i>
+                                Demo
+                            </a>
+                            <a href="#" class="project__button">
+                                <i class="fab fa-github"></i>
+                                Código
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 5 -->
+                <article class="project__card">
+                    <div class="project__image">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="project__content">
+                        <h3 class="project__title">Pipeline de Data Factory</h3>
+                        <p class="project__description">
+                            Pipeline ETL em Azure Data Factory para extração, transformação e carga de dados. 
+                            Inclui tratamento de erros e agendamento automático.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">Azure</span>
+                            <span class="tag">Data Factory</span>
+                            <span class="tag">ETL</span>
+                            <span class="tag">SQL</span>
+                        </div>
+                        <div class="project__buttons">
+                            <a href="#" class="project__button">
+                                <i class="fas fa-eye"></i>
+                                Demo
+                            </a>
+                            <a href="#" class="project__button">
+                                <i class="fab fa-github"></i>
+                                Código
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 6 -->
+                <article class="project__card">
+                    <div class="project__image">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="project__content">
+                        <h3 class="project__title">Jogo Pokémon Web</h3>
+                        <p class="project__description">
+                            Jogo interativo desenvolvido em JavaScript puro com mecânicas de batalha, 
+                            captura de pokémons e sistema de pontuação.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                            <span class="tag">Game Dev</span>
+                        </div>
+                        <div class="project__buttons">
+                            <a href="https://eduardorodriguesferreira.github.io/Pok-mon-Jogo-Web/" target="_blank" class="project__button">
+                                <i class="fas fa-eye"></i>
+                                Demo
+                            </a>
+                            <a href="https://github.com/EduardoRodriguesFerreira" target="_blank" class="project__button">
+                                <i class="fab fa-github"></i>
+                                Código
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact section" id="contact">
+            <div class="section__header">
+                <h2 class="section__title">Entre em Contato</h2>
+                <span class="section__subtitle">Vamos Trabalhar Juntos</span>
+            </div>
+
+            <div class="contact__container container grid">
+                <div class="contact__info">
+                    <h3 class="contact__title">Fale Comigo</h3>
+                    <p class="contact__description">
+                        Estou disponível para oportunidades de trabalho, consultorias e projetos freelance. 
+                        Entre em contato através dos canais abaixo.
+                    </p>
+
+                    <div class="contact__cards">
+                        <div class="contact__card">
+                            <i class="fas fa-envelope"></i>
+                            <h3>Email</h3>
+                            <p>eduardorodriguesferreira1240@gmail.com</p>
+                            <a href="mailto:eduardorodriguesferreira1240@gmail.com" class="contact__button">
+                                Enviar Email <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+
+                        <div class="contact__card">
+                            <i class="fab fa-whatsapp"></i>
+                            <h3>WhatsApp</h3>
+                            <p>Disponível para conversas</p>
+                            <a href="https://wa.me/5511993862231" target="_blank" class="contact__button">
+                                Abrir WhatsApp <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+
+                        <div class="contact__card">
+                            <i class="fab fa-linkedin"></i>
+                            <h3>LinkedIn</h3>
+                            <p>Conecte-se comigo</p>
+                            <a href="https://www.linkedin.com/in/eduardo-rodrigues-03213b1b7/" target="_blank" class="contact__button">
+                                Ver Perfil <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+
+                        <div class="contact__card">
+                            <i class="fab fa-github"></i>
+                            <h3>GitHub</h3>
+                            <p>Veja meus projetos</p>
+                            <a href="https://github.com/EduardoRodriguesFerreira" target="_blank" class="contact__button">
+                                Ver Repositórios <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact__form" id="contact-form">
+                    <div class="contact__form-div">
+                        <label class="contact__form-tag">Nome</label>
+                        <input type="text" name="name" placeholder="Seu nome completo" class="contact__form-input" required>
+                    </div>
+
+                    <div class="contact__form-div">
+                        <label class="contact__form-tag">Email</label>
+                        <input type="email" name="email" placeholder="seu@email.com" class="contact__form-input" required>
+                    </div>
+
+                    <div class="contact__form-div contact__form-area">
+                        <label class="contact__form-tag">Mensagem</label>
+                        <textarea name="message" placeholder="Escreva sua mensagem..." class="contact__form-input" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="button button--primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Enviar Mensagem
+                    </button>
+
+                    <p class="contact__message" id="contact-message"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container container grid">
+            <div class="footer__content">
+                <a href="#home" class="footer__logo">
+                    <i class="fas fa-code"></i>
+                    Eduardo Rodrigues
+                </a>
+                <p class="footer__description">
+                    Analista de Dados & Full Stack Developer<br>
+                    Transformando dados em soluções
+                </p>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Links</h3>
+                <ul class="footer__links">
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projetos</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Redes Sociais</h3>
+                <div class="footer__social">
+                    <a href="https://github.com/EduardoRodriguesFerreira" target="_blank" class="footer__social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/eduardo-rodrigues-03213b1b7/" target="_blank" class="footer__social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:eduardorodriguesferreira1240@gmail.com" class="footer__social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
         </div>
 
-    </header>
-         
-    
-           <div class="caixa1">
-           
+        <div class="footer__copy">
+            <p>&copy; 2025 Eduardo Rodrigues. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
-              <div class="items">
-               <div  class="titulo2">
-                  <h1>Linguagens</h1>
-               </div>
-                <div class="a">
-                  <img class="perfil" src="img/338554746_1421614858612477_3131835037170484959_n.jpg" alt="">
-                  <div class="paragrafo">
-                     <img src="img/javascript1.png" alt="">
-                     
-                  </div>
-                  <div class="paragrafo2">
-                      <img src="img/logo-2582747_640-e1597771254582.png" alt="">
-                      
-                   </div>
-  
-                   <div class="paragrafo3">
-                      <img src="img/html.webp" alt="">
-                      
-                   </div>
-  
-                   <div class="paragrafo4">
-                      <img src="img/kisspng-c-programming-language-logo-microsoft-visual-stud-atlas-portfolio-5b899192d7c600.1628571115357423548838.webp" alt="">
-                    
-                   </div>
+    <!-- Scroll Up Button -->
+    <a href="#home" class="scrollup" id="scroll-up">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
-                </div>
-                
-               
-                 <div class="botoes">
-                  <button id="btn"></button>
-                  <button id="btn2"></button>
-                 </div>
-                
-                 <article id="con">
-
-                  <img src="img/notbook.webp" alt="" id="ba">
-                      
-                  <div class="sobre2">
-                     <h1>Sobre</h1>
-                     <p>Olá me chamo Eduardo tenho 20 anos, estudo programação faz 1 ano, estou fazendo faculdade de Análise e desenvolvimento de sistemas, atualmente estou estudando bastante Front-End, meu objetivo hoje é conseguir uma vaga de estágio para maior conhecimento.</p>
-                  </div>
-                
-                 </article>
-
-
-                
-              </div>
-           </div>
-
-
-           
-
-   
-
-<script src="index.js"></script>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
