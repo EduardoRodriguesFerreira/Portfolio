@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Projeto demonstrativo de landing page completa para clinica ou consultorio, com servicos, beneficios, formulario de agendamento, FAQ e WhatsApp." />
+  <title>Landing Page Clinica | Projeto demonstrativo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="clinic-page" data-app="clinic-landing">
+  <header class="app-header clinic-header">
+    <div class="container app-header__inner clinic-header__inner">
+      <a class="brand" href="../index.html#projetos" aria-label="Voltar para projetos do portfolio">
+        <span class="brand__mark">ER</span>
+        <span><b>Landing Page Cl&iacute;nica</b><small>Projeto demonstrativo</small></span>
+      </a>
+
+      <nav class="clinic-nav" aria-label="Navega&ccedil;&atilde;o da landing page">
+        <a href="#servicos-clinica">Servi&ccedil;os</a>
+        <a href="#beneficios-clinica">Benef&iacute;cios</a>
+        <a href="#processo-clinica">Processo</a>
+        <a href="#faq-clinica">FAQ</a>
+      </nav>
+
+      <div class="app-header__actions">
+        <button class="icon-button theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema"><i class="fa-solid fa-sun"></i></button>
+        <a class="btn btn--outline" href="../index.html#projetos">Voltar</a>
+        <a class="btn btn--primary" href="#" data-project-name="Landing Page Cl&iacute;nica"><i class="fa-brands fa-whatsapp"></i> Quero parecido</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="clinic-app">
+    <section class="clinic-hero" id="inicio">
+      <div class="container clinic-hero__grid">
+        <div class="clinic-hero__copy reveal">
+          <span class="badge clinic-badge"><i class="fa-solid fa-stethoscope"></i> Projeto demonstrativo</span>
+          <h1>Landing page completa para cl&iacute;nica ou consult&oacute;rio captar agendamentos com confian&ccedil;a.</h1>
+          <p>Modelo profissional para apresentar servi&ccedil;os com clareza, reduzir d&uacute;vidas do paciente e facilitar o primeiro contato pelo WhatsApp.</p>
+
+          <div class="clinic-actions">
+            <a class="btn btn--primary btn--lg" href="#agendamento-clinica"><i class="fa-brands fa-whatsapp"></i> Agendar pelo WhatsApp</a>
+            <a class="btn btn--outline btn--lg" href="#servicos-clinica">Ver servi&ccedil;os</a>
+          </div>
+
+          <div class="clinic-trust-row" aria-label="Diferenciais da landing page">
+            <article class="clinic-trust-item">
+              <i class="fa-solid fa-shield-heart"></i>
+              <strong>Confian&ccedil;a</strong>
+              <span>Visual limpo para transmitir cuidado e profissionalismo.</span>
+            </article>
+            <article class="clinic-trust-item">
+              <i class="fa-solid fa-calendar-check"></i>
+              <strong>Agendamento</strong>
+              <span>Formul&aacute;rio direto com mensagem pronta para WhatsApp.</span>
+            </article>
+            <article class="clinic-trust-item">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+              <strong>Mobile first</strong>
+              <span>Layout pensado para quem acessa pelo celular.</span>
+            </article>
+          </div>
+        </div>
+
+        <aside class="clinic-appointment-panel reveal" id="agendamento-clinica" aria-label="Formulario de agendamento">
+          <div class="clinic-panel-head">
+            <div>
+              <span>Agenda online</span>
+              <h2>Solicitar avalia&ccedil;&atilde;o</h2>
+            </div>
+            <strong><i class="fa-solid fa-clock"></i> resposta r&aacute;pida</strong>
+          </div>
+
+          <div class="clinic-slots" aria-label="Horarios de exemplo">
+            <span>Hoje 14:30</span>
+            <span>Amanh&atilde; 09:00</span>
+            <span>Sexta 16:00</span>
+          </div>
+
+          <form class="clinic-form" id="clinicAppointmentForm">
+            <div class="clinic-form-row">
+              <label>Nome
+                <input name="name" autocomplete="name" placeholder="Seu nome" required />
+              </label>
+              <label>Telefone
+                <input name="phone" inputmode="tel" autocomplete="tel" placeholder="(00) 00000-0000" />
+              </label>
+            </div>
+
+            <div class="clinic-form-row">
+              <label>Servi&ccedil;o
+                <select name="service">
+                  <option>Consulta inicial</option>
+                  <option>Avalia&ccedil;&atilde;o cl&iacute;nica</option>
+                  <option>Retorno</option>
+                  <option>Exame ou procedimento</option>
+                  <option>Teleatendimento</option>
+                </select>
+              </label>
+              <label>Unidade
+                <select name="unit">
+                  <option>Unidade Centro</option>
+                  <option>Unidade Bairro</option>
+                  <option>Atendimento online</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="clinic-form-row">
+              <label>Data preferida
+                <input name="date" type="date" />
+              </label>
+              <label>Hor&aacute;rio
+                <select name="time">
+                  <option>Manh&atilde;</option>
+                  <option>Tarde</option>
+                  <option>Noite</option>
+                  <option>Primeiro hor&aacute;rio dispon&iacute;vel</option>
+                </select>
+              </label>
+            </div>
+
+            <label>Mensagem
+              <textarea name="message" placeholder="Conte rapidamente o que voc&ecirc; precisa"></textarea>
+            </label>
+
+            <button class="btn btn--primary" type="submit"><i class="fa-brands fa-whatsapp"></i> Enviar no WhatsApp</button>
+            <small class="form-feedback" id="clinicFormFeedback" aria-live="polite">Os dados s&atilde;o usados apenas para montar a mensagem de WhatsApp.</small>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <section class="clinic-section clinic-section--surface" id="servicos-clinica">
+      <div class="container">
+        <div class="clinic-section-heading reveal">
+          <span class="eyebrow">Servi&ccedil;os</span>
+          <h2>Uma p&aacute;gina preparada para explicar o atendimento e levar o visitante para a conversa.</h2>
+          <p>O objetivo &eacute; mostrar informa&ccedil;&otilde;es importantes sem deixar a p&aacute;gina pesada ou confusa.</p>
+        </div>
+
+        <div class="clinic-service-grid">
+          <article class="clinic-service-card reveal">
+            <i class="fa-solid fa-user-doctor"></i>
+            <h3>Consulta inicial</h3>
+            <p>Bloco para explicar o primeiro atendimento, orientar o paciente e facilitar a marca&ccedil;&atilde;o.</p>
+            <a href="#" data-whatsapp-message="Ola, vi a landing page de clinica no seu portfolio e quero algo parecido para divulgar consultas iniciais.">Solicitar modelo</a>
+          </article>
+          <article class="clinic-service-card reveal">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <h3>Avalia&ccedil;&atilde;o cl&iacute;nica</h3>
+            <p>Espa&ccedil;o para destacar avalia&ccedil;&otilde;es, triagem, orienta&ccedil;&otilde;es e diferenciais do atendimento.</p>
+            <a href="#" data-whatsapp-message="Ola, vi a landing page de clinica no seu portfolio e quero algo parecido para avaliacoes clinicas.">Solicitar modelo</a>
+          </article>
+          <article class="clinic-service-card reveal">
+            <i class="fa-solid fa-calendar-days"></i>
+            <h3>Retornos e acompanhamento</h3>
+            <p>Se&ccedil;&atilde;o para explicar acompanhamento, retornos programados e continuidade do cuidado.</p>
+            <a href="#" data-whatsapp-message="Ola, vi a landing page de clinica no seu portfolio e quero algo parecido para retornos e acompanhamento.">Solicitar modelo</a>
+          </article>
+          <article class="clinic-service-card reveal">
+            <i class="fa-solid fa-vial-circle-check"></i>
+            <h3>Exames e procedimentos</h3>
+            <p>Cards para listar procedimentos, preparo, orienta&ccedil;&otilde;es e chamada para tirar d&uacute;vidas.</p>
+            <a href="#" data-whatsapp-message="Ola, vi a landing page de clinica no seu portfolio e quero algo parecido para exames e procedimentos.">Solicitar modelo</a>
+          </article>
+          <article class="clinic-service-card reveal">
+            <i class="fa-solid fa-video"></i>
+            <h3>Teleatendimento</h3>
+            <p>Bloco para apresentar atendimento online, regras, disponibilidade e orienta&ccedil;&otilde;es iniciais.</p>
+            <a href="#" data-whatsapp-message="Ola, vi a landing page de clinica no seu portfolio e quero algo parecido para teleatendimento.">Solicitar modelo</a>
+          </article>
+          <article class="clinic-service-card reveal">
+            <i class="fa-solid fa-file-medical"></i>
+            <h3>Orienta&ccedil;&otilde;es ao paciente</h3>
+            <p>&Aacute;rea para documentos, prepara&ccedil;&otilde;es, d&uacute;vidas comuns e informa&ccedil;&otilde;es antes da consulta.</p>
+            <a href="#" data-whatsapp-message="Ola, vi a landing page de clinica no seu portfolio e quero algo parecido com orientacoes ao paciente.">Solicitar modelo</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="clinic-section" id="beneficios-clinica">
+      <div class="container clinic-split">
+        <div class="clinic-benefit-copy reveal">
+          <span class="eyebrow">Benef&iacute;cios</span>
+          <h2>Conte&uacute;do organizado para gerar mais seguran&ccedil;a antes do contato.</h2>
+          <p>Uma landing page para cl&iacute;nica precisa ser bonita, mas tamb&eacute;m precisa responder perguntas, mostrar caminhos claros e reduzir atrito no agendamento.</p>
+
+          <div class="clinic-benefit-list">
+            <article>
+              <i class="fa-solid fa-check"></i>
+              <div>
+                <strong>CTA vis&iacute;vel em pontos estrat&eacute;gicos</strong>
+                <span>Bot&otilde;es para WhatsApp no topo, nos servi&ccedil;os, no formul&aacute;rio e no final da p&aacute;gina.</span>
+              </div>
+            </article>
+            <article>
+              <i class="fa-solid fa-check"></i>
+              <div>
+                <strong>Design responsivo</strong>
+                <span>Layout adaptado para celular, tablet, notebook e telas maiores.</span>
+              </div>
+            </article>
+            <article>
+              <i class="fa-solid fa-check"></i>
+              <div>
+                <strong>Se&ccedil;&otilde;es comerciais completas</strong>
+                <span>Servi&ccedil;os, processo, diferenciais, perguntas frequentes e chamada final.</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="clinic-phone-preview reveal" aria-label="Previa visual de landing page no celular">
+          <div class="clinic-phone-top">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="clinic-phone-screen">
+            <strong>Agenda da semana</strong>
+            <div class="clinic-mini-kpis">
+              <span><b>38</b> solicita&ccedil;&otilde;es</span>
+              <span><b>74%</b> via celular</span>
+            </div>
+            <div class="clinic-mini-chart">
+              <i style="height: 44%"></i>
+              <i style="height: 62%"></i>
+              <i style="height: 78%"></i>
+              <i style="height: 54%"></i>
+              <i style="height: 86%"></i>
+            </div>
+            <div class="clinic-mini-list">
+              <span><b>09:00</b> Consulta inicial <em>Confirmada</em></span>
+              <span><b>14:30</b> Avalia&ccedil;&atilde;o <em>Pendente</em></span>
+              <span><b>16:00</b> Retorno <em>Confirmada</em></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="clinic-section clinic-section--surface" id="processo-clinica">
+      <div class="container">
+        <div class="clinic-section-heading reveal">
+          <span class="eyebrow">Processo</span>
+          <h2>Fluxo simples para transformar visita em conversa.</h2>
+          <p>A p&aacute;gina guia o visitante de forma objetiva, sem excesso de texto e com decis&otilde;es f&aacute;ceis.</p>
+        </div>
+
+        <div class="clinic-process-grid">
+          <article class="clinic-process-card reveal">
+            <span>01</span>
+            <h3>Entende o atendimento</h3>
+            <p>O visitante encontra uma explica&ccedil;&atilde;o clara sobre servi&ccedil;os, diferenciais e para quem a cl&iacute;nica atende.</p>
+          </article>
+          <article class="clinic-process-card reveal">
+            <span>02</span>
+            <h3>Escolhe o servi&ccedil;o</h3>
+            <p>Os cards ajudam a pessoa a identificar rapidamente o tipo de atendimento que precisa.</p>
+          </article>
+          <article class="clinic-process-card reveal">
+            <span>03</span>
+            <h3>Envia os dados</h3>
+            <p>O formul&aacute;rio monta uma mensagem completa com nome, telefone, servi&ccedil;o, unidade, data e hor&aacute;rio.</p>
+          </article>
+          <article class="clinic-process-card reveal">
+            <span>04</span>
+            <h3>Conversa no WhatsApp</h3>
+            <p>O atendimento recebe uma mensagem pronta, organizada e f&aacute;cil de responder.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="clinic-section">
+      <div class="container clinic-detail-grid">
+        <article class="clinic-detail-card reveal">
+          <span class="eyebrow">Problema que resolve</span>
+          <h2>Presen&ccedil;a digital mais profissional para quem depende de agendamentos.</h2>
+          <p>Muitas cl&iacute;nicas e consult&oacute;rios divulgam apenas pelas redes sociais, mas acabam sem uma p&aacute;gina clara para explicar servi&ccedil;os, responder d&uacute;vidas e receber contatos organizados.</p>
+        </article>
+        <article class="clinic-detail-card reveal">
+          <span class="eyebrow">Para quem serve</span>
+          <h2>Cl&iacute;nicas, consult&oacute;rios e profissionais que precisam captar contatos com mais clareza.</h2>
+          <p>O modelo pode ser adaptado para sa&uacute;de, est&eacute;tica, terapias, odontologia, nutri&ccedil;&atilde;o, psicologia, especialidades m&eacute;dicas e atendimentos particulares.</p>
+        </article>
+        <article class="clinic-detail-card clinic-detail-card--wide reveal">
+          <span class="eyebrow">Tecnologias usadas</span>
+          <h2>HTML, CSS e JavaScript com foco em performance, responsividade e contato direto.</h2>
+          <div class="clinic-stack">
+            <span>HTML sem&acirc;ntico</span>
+            <span>CSS responsivo</span>
+            <span>JavaScript</span>
+            <span>WhatsApp</span>
+            <span>Formul&aacute;rio funcional</span>
+            <span>SEO b&aacute;sico</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="clinic-section clinic-section--surface" id="faq-clinica">
+      <div class="container clinic-faq-layout">
+        <div class="clinic-section-heading reveal">
+          <span class="eyebrow">Perguntas frequentes</span>
+          <h2>FAQ para reduzir d&uacute;vidas antes do primeiro contato.</h2>
+          <p>Esse bloco ajuda a responder perguntas comuns e aumenta a chance de a pessoa chamar no WhatsApp com mais seguran&ccedil;a.</p>
+        </div>
+
+        <div class="clinic-faq-list reveal">
+          <details open>
+            <summary>Essa landing pode ser adaptada para qualquer especialidade?</summary>
+            <p>Sim. A estrutura pode ser adaptada para diferentes servi&ccedil;os, especialidades, unidades, tipos de atendimento e identidade visual.</p>
+          </details>
+          <details>
+            <summary>O formul&aacute;rio envia mensagem para WhatsApp?</summary>
+            <p>Sim. Nesta demonstra&ccedil;&atilde;o, os campos preenchidos montam uma mensagem autom&aacute;tica para iniciar a conversa.</p>
+          </details>
+          <details>
+            <summary>A p&aacute;gina funciona bem no celular?</summary>
+            <p>Sim. O layout foi pensado para navega&ccedil;&atilde;o mobile, com bot&otilde;es grandes, se&ccedil;&otilde;es empilhadas e CTA fixo no rodap&eacute;.</p>
+          </details>
+          <details>
+            <summary>&Eacute; poss&iacute;vel incluir integra&ccedil;&atilde;o com agenda?</summary>
+            <p>Sim. Em um projeto real, a landing pode evoluir para integra&ccedil;&otilde;es com Google Agenda, sistemas de agenda, CRM ou automa&ccedil;&otilde;es.</p>
+          </details>
+          <details>
+            <summary>Esse projeto foi feito para uma cl&iacute;nica real?</summary>
+            <p>N&atilde;o. Esta &eacute; uma solu&ccedil;&atilde;o fict&iacute;cia baseada em problemas reais de mercado, criada para demonstrar capacidade t&eacute;cnica e visual.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="clinic-section clinic-section--cta">
+      <div class="container clinic-cta-band reveal">
+        <div>
+          <span class="eyebrow">Projeto parecido</span>
+          <h2>Quer uma landing page assim para divulgar seus servi&ccedil;os?</h2>
+          <p>Eu posso adaptar essa estrutura para outro nicho, identidade visual, servi&ccedil;os, formul&aacute;rios e integra&ccedil;&otilde;es.</p>
+        </div>
+        <a class="btn btn--primary btn--lg" href="#" data-project-name="Landing Page Cl&iacute;nica"><i class="fa-brands fa-whatsapp"></i> Quero um projeto parecido</a>
+      </div>
+    </section>
+  </main>
+
+  <a class="clinic-floating-cta" href="#" data-project-name="Landing Page Cl&iacute;nica"><i class="fa-brands fa-whatsapp"></i> Quero parecido</a>
+
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Projeto demonstrativo de sistema administrativo com dashboard, cadastros e tabela de registros." />
+  <title>Sistema Administrativo | Projeto demonstrativo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="app-page" data-app="admin-system">
+  <header class="app-header">
+    <div class="container app-header__inner">
+      <a class="brand" href="../index.html#projetos"><span class="brand__mark">ER</span><span><b>Sistema Administrativo</b><small>Projeto demonstrativo</small></span></a>
+      <div class="app-header__actions">
+        <button class="icon-button theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema"><i class="fa-solid fa-sun"></i></button>
+        <a class="btn btn--outline" href="../index.html#projetos">Voltar</a>
+        <a class="btn btn--primary" href="#" data-project-name="Sistema Administrativo"><i class="fa-brands fa-whatsapp"></i> Quero parecido</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <div class="container">
+      <div class="app-shell">
+        <aside class="app-sidebar">
+          <div class="app-logo"><i class="fa-solid fa-table-columns"></i><span>AdminHub</span></div>
+          <a class="active" href="#dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+          <a href="#cadastro"><i class="fa-solid fa-plus"></i> Novo cadastro</a>
+          <a href="#registros"><i class="fa-solid fa-table"></i> Registros</a>
+          <a href="#funcionalidades"><i class="fa-solid fa-list-check"></i> Funcionalidades</a>
+          <div class="app-sidebar__note">Demonstração profissional criada para apresentar minha capacidade técnica.</div>
+        </aside>
+
+        <section class="app-workspace">
+          <div class="app-topbar">
+            <div class="app-title">
+              <span><i class="fa-solid fa-bolt"></i> Projeto demonstrativo</span>
+              <h1>Sistema administrativo com cadastros e status</h1>
+              <p>Dashboard inicial, menu lateral, cadastro de clientes, cadastro de serviços, controle de status, tabela e formulário funcional.</p>
+              <div class="stack"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>SaaS UI</span><span>CRUD simulado</span></div>
+            </div>
+            <div class="app-toolbar">
+              <select class="app-control" id="adminStatusFilter" aria-label="Status"><option>Todos</option><option>Pendente</option><option>Em andamento</option><option>Concluído</option></select>
+            </div>
+          </div>
+
+          <div class="app-kpi-grid" id="dashboard">
+            <article class="app-kpi"><small>Clientes</small><strong id="adminClients">0</strong><em>cadastrados</em></article>
+            <article class="app-kpi"><small>Serviços</small><strong id="adminServices">0</strong><em>registros</em></article>
+            <article class="app-kpi"><small>Em aberto</small><strong id="adminOpen">0</strong><em>pendências</em></article>
+            <article class="app-kpi"><small>Valor previsto</small><strong id="adminValue">R$ 0</strong><em>pipeline</em></article>
+          </div>
+
+          <div class="app-grid">
+            <form class="app-form" id="adminForm">
+              <div class="app-panel__head" id="cadastro"><div><h2>Novo cadastro</h2><p>Adicione um cliente e serviço para atualizar a tabela.</p></div></div>
+              <label>Cliente<input name="client" placeholder="Cliente 04" required /></label>
+              <label>Serviço<input name="service" placeholder="Serviço contratado" required /></label>
+              <div class="form-grid">
+                <label>Status<select name="status"><option>Pendente</option><option>Em andamento</option><option>Concluído</option></select></label>
+                <label>Valor<input name="value" type="number" min="0" step="100" placeholder="5000" /></label>
+              </div>
+              <button class="btn btn--primary" type="submit"><i class="fa-solid fa-plus"></i> Cadastrar</button>
+            </form>
+
+            <section class="app-panel" id="funcionalidades">
+              <div class="app-panel__head"><div><h2>Problema que resolve</h2><p>Centraliza controles que normalmente ficam espalhados em planilhas, mensagens e arquivos.</p></div></div>
+              <ul class="features-list">
+                <li><i class="fa-solid fa-check"></i> Para prestadores, escritórios e pequenas empresas.</li>
+                <li><i class="fa-solid fa-check"></i> Organiza clientes, serviços, status e valores.</li>
+                <li><i class="fa-solid fa-check"></i> Pode evoluir para login, banco de dados e relatórios.</li>
+              </ul>
+            </section>
+          </div>
+
+          <section class="app-panel" id="registros">
+            <div class="app-panel__head"><div><h2>Tabela de registros</h2><p>Dados fictícios com controle de status.</p></div></div>
+            <div class="app-table-wrap">
+              <table class="app-table">
+                <thead><tr><th>Cliente</th><th>Serviço</th><th>Status</th><th>Valor</th></tr></thead>
+                <tbody id="adminTable"></tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="../script.js"></script>
+</body>
+</html>

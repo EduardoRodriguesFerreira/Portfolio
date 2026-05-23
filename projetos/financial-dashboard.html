@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Projeto demonstrativo de dashboard financeiro com indicadores, gráficos, filtros e tabela." />
+  <title>Dashboard Financeiro | Projeto demonstrativo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="app-page" data-app="financial-dashboard">
+  <header class="app-header">
+    <div class="container app-header__inner">
+      <a class="brand" href="../index.html#projetos"><span class="brand__mark">ER</span><span><b>Dashboard Financeiro</b><small>Projeto demonstrativo</small></span></a>
+      <div class="app-header__actions">
+        <button class="icon-button theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema"><i class="fa-solid fa-sun"></i></button>
+        <a class="btn btn--outline" href="../index.html#projetos">Voltar</a>
+        <a class="btn btn--primary" href="#" data-project-name="Dashboard Financeiro"><i class="fa-brands fa-whatsapp"></i> Quero parecido</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <div class="container">
+      <div class="app-shell">
+        <aside class="app-sidebar">
+          <div class="app-logo"><i class="fa-solid fa-chart-pie"></i><span>FinanceDash</span></div>
+          <a class="active" href="#visao"><i class="fa-solid fa-gauge-high"></i> Visão geral</a>
+          <a href="#grafico"><i class="fa-solid fa-chart-simple"></i> Gráficos</a>
+          <a href="#lancamentos"><i class="fa-solid fa-table"></i> Lançamentos</a>
+          <a href="#uso"><i class="fa-solid fa-circle-info"></i> Uso</a>
+          <div class="app-sidebar__note">Solução fictícia baseada em problemas reais de controle financeiro.</div>
+        </aside>
+
+        <section class="app-workspace">
+          <div class="app-topbar">
+            <div class="app-title">
+              <span><i class="fa-solid fa-bolt"></i> Projeto demonstrativo</span>
+              <h1>Dashboard financeiro estilo SaaS</h1>
+              <p>Cards de faturamento, despesas, lucro e margem, com filtro por período, gráfico visual e tabela de lançamentos.</p>
+              <div class="stack"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>KPIs</span><span>Filtros</span></div>
+            </div>
+            <div class="app-toolbar">
+              <select class="app-control" id="financePeriodFilter" aria-label="Período"><option>Todos</option><option>Jan</option><option>Fev</option><option>Mar</option></select>
+            </div>
+          </div>
+
+          <div class="app-kpi-grid" id="visao">
+            <article class="app-kpi"><small>Faturamento</small><strong id="financeRevenue">R$ 0</strong><em>receitas filtradas</em></article>
+            <article class="app-kpi"><small>Despesas</small><strong id="financeExpense">R$ 0</strong><em>custos e gastos</em></article>
+            <article class="app-kpi"><small>Lucro</small><strong id="financeProfit">R$ 0</strong><em>resultado estimado</em></article>
+            <article class="app-kpi"><small>Margem</small><strong id="financeMargin">0%</strong><em>lucro / receita</em></article>
+          </div>
+
+          <div class="app-grid">
+            <section class="app-panel" id="grafico">
+              <div class="app-panel__head"><div><h2>Receita por período</h2><p>Gráfico simples para comparar evolução mensal.</p></div></div>
+              <div class="app-chart" id="financeChart"></div>
+            </section>
+            <section class="app-panel" id="uso">
+              <div class="app-panel__head"><div><h2>Problema que resolve</h2><p>Organiza indicadores financeiros que muitas empresas controlam em planilhas separadas.</p></div></div>
+              <ul class="features-list">
+                <li><i class="fa-solid fa-check"></i> Para pequenos negócios, prestadores e gestores.</li>
+                <li><i class="fa-solid fa-check"></i> Mostra faturamento, despesas, lucro e pagamentos.</li>
+                <li><i class="fa-solid fa-check"></i> Pode evoluir para Power BI, banco de dados ou API.</li>
+              </ul>
+            </section>
+          </div>
+
+          <section class="app-panel" id="lancamentos">
+            <div class="app-panel__head"><div><h2>Tabela de lançamentos</h2><p>Dados fictícios para representar um fluxo financeiro real.</p></div></div>
+            <div class="app-table-wrap">
+              <table class="app-table">
+                <thead><tr><th>Período</th><th>Descrição</th><th>Tipo</th><th>Status</th><th>Valor</th></tr></thead>
+                <tbody id="financeTable"></tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Projeto demonstrativo de página técnica para API e integrações." />
+  <title>API e Integrações | Projeto demonstrativo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="app-page" data-app="api-integrations">
+  <header class="app-header">
+    <div class="container app-header__inner">
+      <a class="brand" href="../index.html#projetos"><span class="brand__mark">ER</span><span><b>API e Integrações</b><small>Projeto demonstrativo</small></span></a>
+      <div class="app-header__actions">
+        <button class="icon-button theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema"><i class="fa-solid fa-sun"></i></button>
+        <a class="btn btn--outline" href="../index.html#projetos">Voltar</a>
+        <a class="btn btn--primary" href="#" data-project-name="API e Integrações"><i class="fa-brands fa-whatsapp"></i> Quero parecido</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <div class="container">
+      <div class="app-shell">
+        <aside class="app-sidebar">
+          <div class="app-logo"><i class="fa-solid fa-code-branch"></i><span>Integration API</span></div>
+          <a class="active" href="#console"><i class="fa-solid fa-terminal"></i> Console</a>
+          <a href="#endpoints"><i class="fa-solid fa-route"></i> Endpoints</a>
+          <a href="#logs"><i class="fa-solid fa-list"></i> Logs</a>
+          <a href="#uso"><i class="fa-solid fa-plug"></i> Casos de uso</a>
+          <div class="app-sidebar__note">Demonstração profissional criada para apresentar capacidade técnica em integrações.</div>
+        </aside>
+
+        <section class="app-workspace">
+          <div class="app-topbar">
+            <div class="app-title">
+              <span><i class="fa-solid fa-bolt"></i> Projeto demonstrativo</span>
+              <h1>Página de API e integrações</h1>
+              <p>Explicação da solução, cards de endpoints, resposta JSON, status da API, logs, fluxo de integração e casos de uso.</p>
+              <div class="stack"><span>REST</span><span>JSON</span><span>Auth</span><span>Logs</span><span>Dashboards</span></div>
+            </div>
+          </div>
+
+          <div class="app-kpi-grid">
+            <article class="app-kpi"><small>Status</small><strong>Online</strong><em>API disponível</em></article>
+            <article class="app-kpi"><small>Latência</small><strong>84ms</strong><em>simulada</em></article>
+            <article class="app-kpi"><small>Requisições</small><strong id="apiRequests">12.842</strong><em>ambiente local</em></article>
+            <article class="app-kpi"><small>Auth</small><strong>Bearer</strong><em>token simulado</em></article>
+          </div>
+
+          <div class="api-console" id="console">
+            <section class="app-panel" id="endpoints">
+              <div class="app-panel__head"><div><h2>Endpoints</h2><p>Clique em uma rota para ver uma resposta JSON fictícia.</p></div></div>
+              <div class="endpoint-grid">
+                <article class="endpoint-tile" data-endpoint="clientes"><strong>GET /clientes</strong><small>Lista clientes para CRM ou dashboard</small></article>
+                <article class="endpoint-tile" data-endpoint="pedidos"><strong>POST /pedidos</strong><small>Recebe pedidos de formulário</small></article>
+                <article class="endpoint-tile" data-endpoint="financeiro"><strong>GET /financeiro</strong><small>Consulta indicadores consolidados</small></article>
+                <article class="endpoint-tile" data-endpoint="token"><strong>POST /auth/token</strong><small>Gera token de acesso</small></article>
+              </div>
+            </section>
+
+            <section class="app-panel">
+              <div class="app-panel__head"><div><h2>Resposta JSON</h2><p>Retorno simulado da rota selecionada.</p></div></div>
+              <pre class="json-box" id="apiResponse"></pre>
+            </section>
+          </div>
+
+          <div class="app-grid" style="margin-top: 16px;">
+            <section class="app-panel" id="logs">
+              <div class="app-panel__head"><div><h2>Logs de requisição</h2><p>Cada teste adiciona uma linha no histórico.</p></div></div>
+              <div class="logs" id="apiLogs"></div>
+            </section>
+            <section class="app-panel" id="uso">
+              <div class="app-panel__head"><div><h2>Problema que resolve</h2><p>Conecta sistemas, formulários, bancos de dados, dashboards e automações.</p></div></div>
+              <ul class="features-list"><li><i class="fa-solid fa-check"></i> Para empresas com ferramentas desconectadas.</li><li><i class="fa-solid fa-check"></i> Reduz exportações manuais de planilhas.</li><li><i class="fa-solid fa-check"></i> Pode alimentar dashboards e sistemas internos.</li></ul>
+            </section>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="../script.js"></script>
+</body>
+</html>

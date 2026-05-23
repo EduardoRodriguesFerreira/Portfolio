@@ -1,805 +1,236 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Eduardo Rodrigues - Analista de Dados e Desenvolvedor Full Stack">
-    <meta name="author" content="Eduardo Rodrigues">
-    <title>Eduardo Rodrigues | Analista de Dados & Full Stack Developer</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfólio freelancer de Eduardo Rodrigues Ferreira. Desenvolvimento de sites, landing pages, sistemas administrativos, dashboards, automações, APIs e análise de dados." />
+  <meta name="author" content="Eduardo Rodrigues Ferreira" />
+  <meta property="og:title" content="Eduardo Rodrigues | Desenvolvimento Web, Dados e Automação" />
+  <meta property="og:description" content="Soluções digitais para empresas que querem vender mais, organizar processos e tomar decisões com dados." />
+  <meta property="og:type" content="website" />
+  <title>Eduardo Rodrigues | Freelancer Web, Dados e Automação</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- Header/Navbar -->
-    <header class="header" id="header">
-        <nav class="nav container">
-            <a href="#home" class="nav__logo">
-                <i class="fas fa-code"></i>
-                <span>Eduardo</span>
-            </a>
+  <header class="site-header" id="top">
+    <nav class="navbar container" aria-label="Navegação principal">
+      <a class="brand" href="#top" aria-label="Ir para o início">
+        <span class="brand__mark">ER</span>
+        <span><b>Eduardo Rodrigues</b><small>Web, dados e automação</small></span>
+      </a>
+      <button class="icon-button nav-toggle" id="navToggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu"><i class="fa-solid fa-bars"></i></button>
+      <div class="nav-menu" id="navMenu">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#experiencia">Experiência</a>
+        <a href="#orcamento">Orçamento</a>
+      </div>
+      <div class="nav-actions">
+        <button class="icon-button theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema"><i class="fa-solid fa-sun"></i></button>
+        <a class="btn btn--primary btn--sm" href="#" data-whatsapp-message="Olá, vi seu portfólio e gostaria de conversar sobre um projeto."><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </nav>
+  </header>
 
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="#home" class="nav__link active-link">
-                            <i class="fas fa-home"></i>
-                            <span>Início</span>
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#about" class="nav__link">
-                            <i class="fas fa-user"></i>
-                            <span>Sobre</span>
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#skills" class="nav__link">
-                            <i class="fas fa-laptop-code"></i>
-                            <span>Skills</span>
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#experience" class="nav__link">
-                            <i class="fas fa-briefcase"></i>
-                            <span>Experiência</span>
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#projects" class="nav__link">
-                            <i class="fas fa-folder-open"></i>
-                            <span>Projetos</span>
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#contact" class="nav__link">
-                            <i class="fas fa-envelope"></i>
-                            <span>Contato</span>
-                        </a>
-                    </li>
-                </ul>
-
-                <i class="fas fa-times nav__close" id="nav-close"></i>
+  <main>
+    <section class="hero section">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__grid">
+        <div class="hero__content reveal">
+          <span class="eyebrow"><i class="fa-solid fa-code"></i> Desenvolvimento web, dados e automação</span>
+          <div class="hero-profile" aria-label="Foto e apresentação de Eduardo Rodrigues">
+            <img src="img/foto.jpeg" alt="Foto de Eduardo Rodrigues Ferreira" />
+            <div>
+              <strong>Eduardo Rodrigues</strong>
+              <small>Desenvolvedor freelancer</small>
             </div>
-
-            <div class="nav__toggle" id="nav-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Main Content -->
-    <main class="main">
-        <!-- Hero Section -->
-        <section class="home section" id="home">
-            <div class="home__container container grid">
-                <div class="home__content">
-                    <div class="home__data">
-                        <h3 class="home__subtitle">Olá, eu sou</h3>
-                        <h1 class="home__title">Eduardo Rodrigues</h1>
-                        <h2 class="home__profession">
-                            <span class="typing-text"></span>
-                            <span class="cursor">|</span>
-                        </h2>
-                        <p class="home__description">
-                            Analista de Dados e Desenvolvedor Full Stack especializado em automação, 
-                            integração de dados, APIs e desenvolvimento de dashboards. 
-                            Experiência em soluções front-end e back-end, desde ETL até interfaces web responsivas.
-                        </p>
-
-                        <div class="home__buttons">
-                            <a href="#contact" class="button button--primary">
-                                <i class="fas fa-paper-plane"></i>
-                                Entre em Contato
-                            </a>
-                            <a href="#projects" class="button button--outline">
-                                <i class="fas fa-folder-open"></i>
-                                Ver Projetos
-                            </a>
-                        </div>
-
-                        <div class="home__social">
-                            <a href="https://github.com/EduardoRodriguesFerreira" target="_blank" class="home__social-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/eduardo-rodrigues-03213b1b7/" target="_blank" class="home__social-link">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="mailto:eduardorodriguesferreira1240@gmail.com" class="home__social-link">
-                                <i class="fas fa-envelope"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="home__img">
-                    <div class="home__blob">
-                        <img src="img/foto.jpeg" alt="Eduardo Rodrigues">
-                    </div>
-                </div>
-            </div>
-
-            <div class="home__scroll">
-                <a href="#about" class="home__scroll-button">
-                    <i class="fas fa-mouse"></i>
-                    <span>Scroll Down</span>
-                </a>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section class="about section" id="about">
-            <div class="section__header">
-                <h2 class="section__title">Sobre Mim</h2>
-                <span class="section__subtitle">Minha Jornada Profissional</span>
-            </div>
-
-            <div class="about__container container grid">
-                <div class="about__content">
-                    <div class="about__info">
-                        <div class="about__box">
-                            <i class="fas fa-award"></i>
-                            <h3>Experiência</h3>
-                            <span>3+ Anos</span>
-                        </div>
-                        <div class="about__box">
-                            <i class="fas fa-briefcase"></i>
-                            <h3>Projetos</h3>
-                            <span>Aplicações Web, Dashboards, Automação</span>
-                        </div>
-                        <div class="about__box">
-                            <i class="fas fa-headset"></i>
-                            <h3>Suporte</h3>
-                            <span>Online</span>
-                        </div>
-                    </div>
-
-                    <div class="about__description">
-                        <p>
-                            Profissional apaixonado por tecnologia e dados com experiência em análise, 
-                            desenvolvimento e automação. Atuo em todas as etapas do ciclo de dados: 
-                            desde a extração e transformação (SQL, ETL, Python) até a visualização 
-                            (Power BI, Dashboards) e desenvolvimento de sistemas web.
-                        </p>
-                        <p>
-                            Atualmente trabalhando na <strong>ACFS Consultores</strong> desenvolvendo 
-                            soluções completas de dados e web, incluindo implantação de infraestrutura 
-                            (DNS, hospedagem, publicação). Graduado em Análise e Desenvolvimento de 
-                            Sistemas pelo Centro Universitário ENIAC.
-                        </p>
-                    </div>
-
-                    <a href="./Curriculo_Eduardo_Rodrigues.pdf" download="Curriculo_Eduardo_Rodrigues.pdf" class="button button--primary">
-                        <i class="fas fa-download"></i>
-                        Download CV
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section class="skills section" id="skills">
-            <div class="section__header">
-                <h2 class="section__title">Competências Técnicas</h2>
-                <span class="section__subtitle">Tecnologias que Domino</span>
-            </div>
-
-            <div class="skills__container container grid">
-                <!-- Data & BI -->
-                <div class="skills__content">
-                    <div class="skills__header">
-                        <i class="fas fa-chart-bar skills__icon"></i>
-                        <div>
-                            <h3 class="skills__title">Dados & BI</h3>
-                            <span class="skills__subtitle">Análise e Visualização</span>
-                        </div>
-                        <i class="fas fa-chevron-down skills__arrow"></i>
-                    </div>
-
-                    <div class="skills__list">
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class="fas fa-chart-line"></i>
-                                <span>Power BI (DAX, Power Query)</span>
-                            </div>
-                            <span class="skills__percentage">95%</span>
-                            <div class="skills__bar">
-                                <span class="skills__fill" style="width: 95%"></span>
-                            </div>
-                        </div>
-
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class="fas fa-database"></i>
-                                <span>SQL Server / Azure SQL</span>
-                            </div>
-                            <span class="skills__percentage">90%</span>
-                            <div class="skills__bar">
-                                <span class="skills__fill" style="width: 90%"></span>
-                            </div>
-                        </div>
-
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class="fas fa-file-excel"></i>
-                                <span>Excel Avançado</span>
-                            </div>
-                            <span class="skills__percentage">85%</span>
-                            <div class="skills__bar">
-                                <span class="skills__fill" style="width: 85%"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Back-end -->
-                <div class="skills__content">
-                    <div class="skills__header">
-                        <i class="fas fa-server skills__icon"></i>
-                        <div>
-                            <h3 class="skills__title">Back-end</h3>
-                            <span class="skills__subtitle">APIs e Servidores</span>
-                        </div>
-                        <i class="fas fa-chevron-down skills__arrow"></i>
-                    </div>
-
-                    <div class="skills__list">
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class="fab fa-python"></i>
-                                <span>Python (Flask, FastAPI)</span>
-                            </div>
-                            <span class="skills__percentage">90%</span>
-                            <div class="skills__bar">
-                                <span class="skills__fill" style="width: 90%"></span>
-                            </div>
-                        </div>
-
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class="fas fa-code"></i>
-                                <span>C# (.NET)</span>
-                            </div>
-                            <span class="skills__percentage">80%</span>
-                            <div class="skills__bar">
-                                <span class="skills__fill" style="width: 80%"></span>
-                            </div>
-                        </div>
-
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class="fab fa-node"></i>
-                                <span>Node.js</span>
-                            </div>
-                            <span class="skills__percentage">75%</span>
-                            <div class="skills__bar">
-                                <span class="skills__fill" style="width: 75%"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Front-end -->
-                <div class="skills__content">
-                    <div class="skills__header">
-                        <i class="fas fa-palette skills__icon"></i>
-                        <div>
-                            <h3 class="skills__title">Front-end</h3>
-                            <span class="skills__subtitle">UI & Desenvolvimento Web</span>
-                        </div>
-                        <i class="fas fa-chevron-down skills__arrow"></i>
-                    </div>
-
-                    <div class="skills__list">
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class="fab fa-react"></i>
-                                <span>React / Next.js</span>
-                            </div>
-                            <span class="skills__percentage">85%</span>
-                            <div class="skills__bar">
-                                <span class="skills__fill" style="width: 85%"></span>
-                            </div>
-                        </div>
-
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class="fab fa-js"></i>
-                                <span>JavaScript / TypeScript</span>
-                            </div>
-                            <span class="skills__percentage">90%</span>
-                            <div class="skills__bar">
-                                <span class="skills__fill" style="width: 90%"></span>
-                            </div>
-                        </div>
-
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class="fab fa-html5"></i>
-                                <span>HTML5 / CSS3</span>
-                            </div>
-                            <span class="skills__percentage">95%</span>
-                            <div class="skills__bar">
-                                <span class="skills__fill" style="width: 95%"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cloud & Tools -->
-                <div class="skills__content">
-                    <div class="skills__header">
-                        <i class="fas fa-cloud skills__icon"></i>
-                        <div>
-                            <h3 class="skills__title">Cloud & DevOps</h3>
-                            <span class="skills__subtitle">Deploy e Automação</span>
-                        </div>
-                        <i class="fas fa-chevron-down skills__arrow"></i>
-                    </div>
-
-                    <div class="skills__list">
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class="fab fa-microsoft"></i>
-                                <span>Azure (Deploy, DNS)</span>
-                            </div>
-                            <span class="skills__percentage">80%</span>
-                            <div class="skills__bar">
-                                <span class="skills__fill" style="width: 80%"></span>
-                            </div>
-                        </div>
-
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class="fab fa-git-alt"></i>
-                                <span>Git / GitHub</span>
-                            </div>
-                            <span class="skills__percentage">85%</span>
-                            <div class="skills__bar">
-                                <span class="skills__fill" style="width: 85%"></span>
-                            </div>
-                        </div>
-
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class="fas fa-robot"></i>
-                                <span>Power Automate / ETL</span>
-                            </div>
-                            <span class="skills__percentage">90%</span>
-                            <div class="skills__bar">
-                                <span class="skills__fill" style="width: 90%"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section class="experience section" id="experience">
-            <div class="section__header">
-                <h2 class="section__title">Experiência Profissional</h2>
-                <span class="section__subtitle">Minha Trajetória</span>
-            </div>
-
-            <div class="experience__container container">
-                <div class="experience__timeline">
-                    <!-- Experience 1 -->
-                    <div class="experience__item">
-                        <div class="experience__marker"></div>
-                        <div class="experience__content">
-                            <div class="experience__header">
-                                <h3 class="experience__title">Analista de Dados / Full Stack</h3>
-                                <span class="experience__company">
-                                    <i class="fas fa-building"></i>
-                                    ACFS Consultores
-                                </span>
-                                <span class="experience__date">
-                                    <i class="fas fa-calendar"></i>
-                                    Ago 2025 - Atual
-                                </span>
-                            </div>
-                            <div class="experience__description">
-                                <ul>
-                                    <li>Desenvolvimento de soluções web e rotinas de dados (relatórios, dashboards e automações)</li>
-                                    <li>Implantação completa de projetos: domínio/DNS, hospedagem e publicação</li>
-                                    <li>Integração de sistemas e APIs para automação de processos</li>
-                                    <li>Criação de dashboards interativos em Power BI com DAX e Power Query</li>
-                                </ul>
-                            </div>
-                            <div class="experience__tags">
-                                <span class="tag">Power BI</span>
-                                <span class="tag">Python</span>
-                                <span class="tag">SQL</span>
-                                <span class="tag">React</span>
-                                <span class="tag">Azure</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Experience 2 -->
-                    <div class="experience__item">
-                        <div class="experience__marker"></div>
-                        <div class="experience__content">
-                            <div class="experience__header">
-                                <h3 class="experience__title">Analista de Dados</h3>
-                                <span class="experience__company">
-                                    <i class="fas fa-building"></i>
-                                    Açovisa
-                                </span>
-                                <span class="experience__date">
-                                    <i class="fas fa-calendar"></i>
-                                    Jul 2024 - Mar 2025
-                                </span>
-                            </div>
-                            <div class="experience__description">
-                                <ul>
-                                    <li>Desenvolvimento e otimização de queries SQL para análise de dados</li>
-                                    <li>Criação de dashboards e relatórios executivos em Power BI</li>
-                                    <li>Migração de tabelas e dados usando C# (.NET Systems) com triggers</li>
-                                    <li>Implementação de processos ETL com Power Query (M) e DAX</li>
-                                </ul>
-                            </div>
-                            <div class="experience__tags">
-                                <span class="tag">SQL Server</span>
-                                <span class="tag">Power BI</span>
-                                <span class="tag">C#</span>
-                                <span class="tag">DAX</span>
-                                <span class="tag">ETL</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Experience 3 -->
-                    <div class="experience__item">
-                        <div class="experience__marker"></div>
-                        <div class="experience__content">
-                            <div class="experience__header">
-                                <h3 class="experience__title">Programador Junior</h3>
-                                <span class="experience__company">
-                                    <i class="fas fa-building"></i>
-                                    WFLOW INVEST
-                                </span>
-                                <span class="experience__date">
-                                    <i class="fas fa-calendar"></i>
-                                    Jul 2023 - Jul 2024
-                                </span>
-                            </div>
-                            <div class="experience__description">
-                                <ul>
-                                    <li>Desenvolvimento de automações com Python e Power Automate</li>
-                                    <li>Integração de sistemas através de APIs REST</li>
-                                    <li>Suporte e desenvolvimento de relatórios em Power BI</li>
-                                    <li>Otimização de processos internos reduzindo tempo de execução em 80%</li>
-                                </ul>
-                            </div>
-                            <div class="experience__tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">Power Automate</span>
-                                <span class="tag">Power BI</span>
-                                <span class="tag">APIs</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section class="projects section" id="projects">
-            <div class="section__header">
-                <h2 class="section__title">Projetos</h2>
-                <span class="section__subtitle">Meus Trabalhos Recentes</span>
-            </div>
-
-            <div class="projects__container container grid">
-                <!-- Project 1 -->
-                <article class="project__card">
-                    <div class="project__image">
-                        <i class="fas fa-chart-pie"></i>
-                    </div>
-                    <div class="project__content">
-                        <h3 class="project__title">Dashboard de Análise de Vendas</h3>
-                        <p class="project__description">
-                            Dashboard interativo em Power BI com visualizações dinâmicas, KPIs estratégicos 
-                            e integração com SQL Server. Atualização automática de dados em tempo real.
-                        </p>
-                        <div class="project__tags">
-                            <span class="tag">Power BI</span>
-                            <span class="tag">DAX</span>
-                            <span class="tag">SQL</span>
-                            <span class="tag">Azure</span>
-                        </div>
-                        <div class="project__buttons">
-                           
-                            <a href="#" class="project__button">
-                                <i class="fab fa-github"></i>
-                                Código
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 2 -->
-                <article class="project__card">
-                    <div class="project__image">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <div class="project__content">
-                        <h3 class="project__title">API REST para Integração</h3>
-                        <p class="project__description">
-                            API RESTful desenvolvida em FastAPI para integração de sistemas, com autenticação JWT, 
-                            documentação Swagger automática e deploy em Azure.
-                        </p>
-                        <div class="project__tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">FastAPI</span>
-                            <span class="tag">PostgreSQL</span>
-                            <span class="tag">Docker</span>
-                        </div>
-                        <div class="project__buttons">
-                           
-                            <a href="#" class="project__button">
-                                <i class="fab fa-github"></i>
-                                Código
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 3 -->
-                <article class="project__card">
-                    <div class="project__image">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <div class="project__content">
-                        <h3 class="project__title">Sistema de Automação</h3>
-                        <p class="project__description">
-                            Sistema que extrai dados, processa com Pandas, gera relatórios Excel e envia 
-                            automaticamente. Redução de 80% no tempo de processamento.
-                        </p>
-                        <div class="project__tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Pandas</span>
-                            <span class="tag">ETL</span>
-                            <span class="tag">Automação</span>
-                        </div>
-                        <div class="project__buttons">
-                        
-                            <a href="#" class="project__button">
-                                <i class="fab fa-github"></i>
-                                Código
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 4 -->
-                <article class="project__card">
-                    <div class="project__image">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-                    <div class="project__content">
-                        <h3 class="project__title">Web App de Visualização</h3>
-                        <p class="project__description">
-                            Aplicação full stack com painel administrativo para visualização de dados. 
-                            Front-end em React e back-end em Flask com API REST.
-                        </p>
-                        <div class="project__tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Flask</span>
-                            <span class="tag">Chart.js</span>
-                            <span class="tag">SQL</span>
-                        </div>
-                        <div class="project__buttons">
-                        
-                            <a href="#" class="project__button">
-                                <i class="fab fa-github"></i>
-                                Código
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 5 -->
-                <article class="project__card">
-                    <div class="project__image">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <div class="project__content">
-                        <h3 class="project__title">Pipeline de Data Factory</h3>
-                        <p class="project__description">
-                            Pipeline ETL em Azure Data Factory para extração, transformação e carga de dados. 
-                            Inclui tratamento de erros e agendamento automático.
-                        </p>
-                        <div class="project__tags">
-                            <span class="tag">Azure</span>
-                            <span class="tag">Data Factory</span>
-                            <span class="tag">ETL</span>
-                            <span class="tag">SQL</span>
-                        </div>
-                        <div class="project__buttons">
-                        
-                            <a href="#" class="project__button">
-                                <i class="fab fa-github"></i>
-                                Código
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 6 -->
-                <article class="project__card">
-                    <div class="project__image">
-                        <i class="fas fa-gamepad"></i>
-                    </div>
-                    <div class="project__content">
-                        <h3 class="project__title">Jogo Pokémon Web</h3>
-                        <p class="project__description">
-                            Jogo interativo desenvolvido em JavaScript puro com mecânicas de batalha, 
-                            captura de pokémons e sistema de pontuação.
-                        </p>
-                        <div class="project__tags">
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">HTML5</span>
-                            <span class="tag">CSS3</span>
-                            <span class="tag">Game Dev</span>
-                        </div>
-                        <div class="project__buttons">
-                            <a href="https://eduardorodriguesferreira.github.io/Pok-mon-Jogo-Web/" target="_blank" class="project__button">
-                                <i class="fas fa-eye"></i>
-                                Demo
-                            </a>
-                            <a href="https://github.com/EduardoRodriguesFerreira" target="_blank" class="project__button">
-                                <i class="fab fa-github"></i>
-                                Código
-                            </a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="contact section" id="contact">
-            <div class="section__header">
-                <h2 class="section__title">Entre em Contato</h2>
-                <span class="section__subtitle">Vamos Trabalhar Juntos</span>
-            </div>
-
-            <div class="contact__container container grid">
-                <div class="contact__info">
-                    <h3 class="contact__title">Fale Comigo</h3>
-                    <p class="contact__description">
-                        Estou disponível para projetos freelancer. 
-                        Entre em contato através dos canais abaixo.
-                    </p>
-
-                    <div class="contact__cards">
-                        <div class="contact__card">
-                            <i class="fas fa-envelope"></i>
-                            <h3>Email</h3>
-                            <p>eduardorodriguesferreira1240@gmail.com</p>
-                            <a href="mailto:eduardorodriguesferreira1240@gmail.com" class="contact__button">
-                                Enviar Email <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-
-                        <div class="contact__card">
-                            <i class="fab fa-whatsapp"></i>
-                            <h3>WhatsApp</h3>
-                            <p>Disponível para conversas</p>
-                            <a href="https://wa.me/5511993862231" target="_blank" class="contact__button">
-                                Abrir WhatsApp <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-
-                        <div class="contact__card">
-                            <i class="fab fa-linkedin"></i>
-                            <h3>LinkedIn</h3>
-                            <p>Conecte-se comigo</p>
-                            <a href="https://www.linkedin.com/in/eduardo-rodrigues-03213b1b7/" target="_blank" class="contact__button">
-                                Ver Perfil <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-
-                        <div class="contact__card">
-                            <i class="fab fa-github"></i>
-                            <h3>GitHub</h3>
-                            <p>Veja meus projetos</p>
-                            <a href="https://github.com/EduardoRodriguesFerreira" target="_blank" class="contact__button">
-                                Ver Repositórios <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <form class="contact__form" id="contact-form">
-                    <div class="contact__form-div">
-                        <label class="contact__form-tag">Nome</label>
-                        <input type="text" name="name" placeholder="Seu nome completo" class="contact__form-input" required>
-                    </div>
-
-                    <div class="contact__form-div">
-                        <label class="contact__form-tag">Email</label>
-                        <input type="email" name="email" placeholder="seu@email.com" class="contact__form-input" required>
-                    </div>
-
-                    <div class="contact__form-div contact__form-area">
-                        <label class="contact__form-tag">Mensagem</label>
-                        <textarea name="message" placeholder="Escreva sua mensagem..." class="contact__form-input" rows="5" required></textarea>
-                    </div>
-
-                    <button type="submit" class="button button--primary">
-                        <i class="fas fa-paper-plane"></i>
-                        Enviar Mensagem
-                    </button>
-
-                    <p class="contact__message" id="contact-message"></p>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer__container container grid">
-            <div class="footer__content">
-                <a href="#home" class="footer__logo">
-                    <i class="fas fa-code"></i>
-                    Eduardo Rodrigues
-                </a>
-                <p class="footer__description">
-                    Analista de Dados & Full Stack Developer<br>
-                    Transformando dados em soluções
-                </p>
-            </div>
-
-            <div class="footer__content">
-                <h3 class="footer__title">Links</h3>
-                <ul class="footer__links">
-                    <li><a href="#about">Sobre</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projetos</a></li>
-                    <li><a href="#contact">Contato</a></li>
-                </ul>
-            </div>
-
-            <div class="footer__content">
-                <h3 class="footer__title">Redes Sociais</h3>
-                <div class="footer__social">
-                    <a href="https://github.com/EduardoRodriguesFerreira" target="_blank" class="footer__social-link">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/eduardo-rodrigues-03213b1b7/" target="_blank" class="footer__social-link">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:eduardorodriguesferreira1240@gmail.com" class="footer__social-link">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
-            </div>
+          </div>
+          <h1>Eu crio sites, sistemas e automações para negócios.</h1>
+          <p class="hero__lead">Desenvolvo soluções digitais bonitas, funcionais e pensadas para resolver problemas reais.</p>
+          <div class="hero__cta">
+            <a class="btn btn--primary btn--lg" href="#projetos"><i class="fa-solid fa-layer-group"></i> Ver projetos</a>
+            <a class="btn btn--outline btn--lg" href="#" data-whatsapp-message="Olá, vi seu portfólio e gostaria de conversar sobre um projeto."><i class="fa-brands fa-whatsapp"></i> Solicitar orçamento no WhatsApp</a>
+          </div>
+          <div class="hero__signals" aria-label="Resumo de atuação">
+            <span><strong>Web</strong> Sites, páginas e sistemas</span>
+            <span><strong>Dados</strong> Dashboards e relatórios</span>
+            <span><strong>Automação</strong> Python, Excel e APIs</span>
+          </div>
         </div>
 
-        <div class="footer__copy">
-            <p>&copy; 2025 Eduardo Rodrigues. Todos os direitos reservados.</p>
+        <div class="hero-lab reveal" aria-label="Mockup de soluções digitais">
+          <div class="lab-window">
+            <div class="lab-window__top"><span></span><span></span><span></span><b>painel.freelancer</b></div>
+            <div class="lab-window__body">
+              <aside class="lab-sidebar">
+                <div class="mini-profile">
+                  <img src="img/foto.jpeg" alt="Foto de Eduardo Rodrigues Ferreira" />
+                  <div><strong>Eduardo</strong><small>Freelancer tech</small></div>
+                </div>
+                <span class="active"><i class="fa-solid fa-chart-line"></i> Dashboard</span>
+                <span><i class="fa-solid fa-file-signature"></i> Propostas</span>
+                <span><i class="fa-solid fa-robot"></i> Automações</span>
+                <span><i class="fa-solid fa-plug"></i> APIs</span>
+              </aside>
+              <section class="lab-main">
+                <div class="lab-kpis">
+                  <article><small>Leads</small><strong>128</strong><em>+18%</em></article>
+                  <article><small>Receita prevista</small><strong>R$ 42k</strong><em>pipeline</em></article>
+                  <article><small>Relatórios</small><strong>Auto</strong><em>Python</em></article>
+                </div>
+                <div class="lab-chart"><span style="height: 44%"></span><span style="height: 72%"></span><span style="height: 58%"></span><span style="height: 88%"></span><span style="height: 66%"></span><span style="height: 94%"></span></div>
+                <div class="lab-table">
+                  <div><b>Projeto</b><b>Status</b><b>Entrega</b></div>
+                  <div><span>Landing page</span><span class="pill ok">Aprovado</span><span>7 dias</span></div>
+                  <div><span>Dashboard BI</span><span class="pill warn">Em análise</span><span>14 dias</span></div>
+                  <div><span>API interna</span><span class="pill info">Planejado</span><span>20 dias</span></div>
+                </div>
+              </section>
+            </div>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <!-- Scroll Up Button -->
-    <a href="#home" class="scrollup" id="scroll-up">
-        <i class="fas fa-arrow-up"></i>
-    </a>
+    <section class="trust-strip section--compact" aria-label="Experiências e tecnologias">
+      <div class="container trust-strip__inner">
+        <span>Vivência prática em contextos de</span>
+        <b>Consultoria e serviços</b>
+        <b>Dados e operação</b>
+        <b>Automação de processos</b>
+        <b>Suporte e atendimento</b>
+      </div>
+    </section>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+    <section class="section" id="sobre">
+      <div class="container about-grid">
+        <div class="section-heading reveal">
+          <span class="eyebrow"><i class="fa-solid fa-user-gear"></i> Sobre mim</span>
+          <h2>Estou estruturando minha atuação como freelancer com base em experiência prática de tecnologia.</h2>
+        </div>
+        <div class="about-card reveal">
+          <p>Sou desenvolvedor com experiência prática em tecnologia, automação de processos, análise de dados e criação de soluções digitais. Ao longo da minha trajetória, tive contato com ferramentas como Python, SQL, Power BI, Power Automate, APIs, desenvolvimento web e sistemas administrativos.</p>
+          <p>Hoje, estou direcionando essa bagagem para projetos freelancer, ajudando empresas a terem presença digital, processos mais organizados e melhores indicadores para tomada de decisão.</p>
+          <p>Meu foco é desenvolver projetos que resolvam problemas reais: vender melhor, organizar processos, automatizar tarefas e transformar dados em decisões.</p>
+          <div class="about-tags"><span>Desenvolvimento web</span><span>Dashboards</span><span>Automações</span><span>APIs</span><span>Sistemas internos</span><span>Análise de dados</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--surface" id="servicos">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow"><i class="fa-solid fa-briefcase"></i> Serviços freelancer</span>
+          <h2>Soluções práticas para presença digital, gestão, automação e dados.</h2>
+          <p>Trabalho com soluções práticas, desde uma landing page para captar clientes até sistemas administrativos e dashboards para gestão.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card reveal"><i class="fa-solid fa-building"></i><h3>Sites institucionais</h3><p>Sites profissionais para apresentar empresa, serviços, diferenciais, canais de contato e gerar mais confiança.</p><div class="tech-list"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>SEO básico</span></div><a class="card-link" href="#" data-service-name="Sites institucionais">Quero esse serviço <i class="fa-solid fa-arrow-right"></i></a></article>
+          <article class="service-card reveal"><i class="fa-solid fa-bullseye"></i><h3>Landing pages</h3><p>Páginas focadas em conversão para campanhas, serviços, profissionais, clínicas, escritórios e negócios locais.</p><div class="tech-list"><span>Copy</span><span>Responsivo</span><span>WhatsApp</span><span>Formulários</span></div><a class="card-link" href="#" data-service-name="Landing pages">Quero esse serviço <i class="fa-solid fa-arrow-right"></i></a></article>
+          <article class="service-card reveal"><i class="fa-solid fa-table-columns"></i><h3>Sistemas administrativos</h3><p>Painéis para organizar clientes, propostas, contratos, tarefas, status, relatórios e rotinas internas.</p><div class="tech-list"><span>Cadastros</span><span>Filtros</span><span>Login</span><span>Relatórios</span></div><a class="card-link" href="#" data-service-name="Sistemas administrativos">Quero esse serviço <i class="fa-solid fa-arrow-right"></i></a></article>
+          <article class="service-card reveal"><i class="fa-solid fa-chart-pie"></i><h3>Dashboards e análise de dados</h3><p>Indicadores para acompanhar vendas, financeiro, operação, metas, clientes ativos e produtividade.</p><div class="tech-list"><span>Power BI</span><span>SQL</span><span>Excel</span><span>DAX</span></div><a class="card-link" href="#" data-service-name="Dashboards e análise de dados">Quero esse serviço <i class="fa-solid fa-arrow-right"></i></a></article>
+          <article class="service-card reveal"><i class="fa-solid fa-gears"></i><h3>Automações com Python, Excel e Power Automate</h3><p>Automação de tarefas repetitivas, geração de relatórios, tratamento de planilhas e fluxos administrativos.</p><div class="tech-list"><span>Python</span><span>Excel</span><span>Power Automate</span><span>PDF</span></div><a class="card-link" href="#" data-service-name="Automações com Python, Excel e Power Automate">Quero esse serviço <i class="fa-solid fa-arrow-right"></i></a></article>
+          <article class="service-card reveal"><i class="fa-solid fa-plug-circle-bolt"></i><h3>APIs e integrações</h3><p>Conexão entre sistemas, bancos de dados, dashboards, formulários, CRMs e ferramentas internas.</p><div class="tech-list"><span>REST</span><span>FastAPI</span><span>SQL</span><span>JSON</span></div><a class="card-link" href="#" data-service-name="APIs e integrações">Quero esse serviço <i class="fa-solid fa-arrow-right"></i></a></article>
+          <article class="service-card reveal"><i class="fa-solid fa-file-export"></i><h3>Relatórios em PDF, Excel ou Power BI</h3><p>Relatórios visuais e recorrentes para acompanhar resultados, reduzir controles manuais e apoiar decisões.</p><div class="tech-list"><span>PDF</span><span>Excel</span><span>Power BI</span><span>Automação</span></div><a class="card-link" href="#" data-service-name="Relatórios em PDF, Excel ou Power BI">Quero esse serviço <i class="fa-solid fa-arrow-right"></i></a></article>
+          <article class="service-card reveal"><i class="fa-solid fa-screwdriver-wrench"></i><h3>Manutenção e melhoria de sistemas existentes</h3><p>Ajustes de layout, correções, melhorias de performance, novas telas e organização de sistemas já publicados.</p><div class="tech-list"><span>UI</span><span>Correções</span><span>Performance</span><span>Novas telas</span></div><a class="card-link" href="#" data-service-name="Manutenção e melhoria de sistemas existentes">Quero esse serviço <i class="fa-solid fa-arrow-right"></i></a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projetos">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow"><i class="fa-solid fa-layer-group"></i> Projetos demonstrativos</span>
+          <h2>Soluções fictícias com aparência real, criadas para mostrar o que posso construir.</h2>
+          <p>Não apresento esses projetos como clientes reais. São projetos de portfólio baseados em problemas reais de mercado, com telas completas, dados fictícios, visual profissional e botões para orçamento.</p>
+        </div>
+        <div class="project-filters reveal" aria-label="Filtros de projetos">
+          <button class="filter-btn active" type="button" data-filter="all">Todos</button>
+          <button class="filter-btn" type="button" data-filter="landing">Landing pages</button>
+          <button class="filter-btn" type="button" data-filter="dashboard">Dashboards</button>
+          <button class="filter-btn" type="button" data-filter="sistema">Sistemas</button>
+          <button class="filter-btn" type="button" data-filter="api">APIs</button>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card reveal" data-category="landing"><div class="project-card__visual visual-lead"><i class="fa-solid fa-stethoscope"></i><span>Projeto demonstrativo</span></div><div class="project-card__body"><h3>Landing Page Clínica</h3><p>Página completa para clínica ou consultório, com hero, serviços, benefícios, FAQ, formulário de agendamento e WhatsApp.</p><div class="tech-list"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>WhatsApp</span></div><div class="project-actions"><a href="projetos/clinic-landing.html">Ver projeto</a><a href="#" data-project-name="Landing Page Clínica">Quero parecido</a></div></div></article>
+          <article class="project-card reveal" data-category="landing"><div class="project-card__visual visual-crm"><i class="fa-solid fa-briefcase"></i><span>Projeto demonstrativo</span></div><div class="project-card__body"><h3>Landing Page Consultoria</h3><p>Página comercial para escritório, consultoria ou prestador de serviço, com processo, áreas de atuação e formulário.</p><div class="tech-list"><span>HTML</span><span>CSS</span><span>CTA</span><span>Responsivo</span></div><div class="project-actions"><a href="projetos/service-landing.html">Ver projeto</a><a href="#" data-project-name="Landing Page Consultoria">Quero parecido</a></div></div></article>
+          <article class="project-card reveal" data-category="dashboard"><div class="project-card__visual visual-sales"><i class="fa-solid fa-chart-pie"></i><span>Projeto demonstrativo</span></div><div class="project-card__body"><h3>Dashboard Financeiro</h3><p>Painel SaaS com faturamento, despesas, lucro, margem, filtros por período, gráficos e tabela de lançamentos.</p><div class="tech-list"><span>KPIs</span><span>Filtros</span><span>Tabela</span><span>JavaScript</span></div><div class="project-actions"><a href="projetos/financial-dashboard.html">Ver projeto</a><a href="#" data-project-name="Dashboard Financeiro">Quero parecido</a></div></div></article>
+          <article class="project-card reveal" data-category="dashboard"><div class="project-card__visual visual-report"><i class="fa-solid fa-chart-line"></i><span>Projeto demonstrativo</span></div><div class="project-card__body"><h3>Dashboard Comercial</h3><p>Dashboard com leads, conversão, vendas, ticket médio, ranking de canais, oportunidades e filtros.</p><div class="tech-list"><span>Funil</span><span>CRM</span><span>Gráficos</span><span>KPIs</span></div><div class="project-actions"><a href="projetos/sales-dashboard.html">Ver projeto</a><a href="#" data-project-name="Dashboard Comercial">Quero parecido</a></div></div></article>
+          <article class="project-card reveal" data-category="sistema"><div class="project-card__visual visual-api"><i class="fa-solid fa-table-columns"></i><span>Projeto demonstrativo</span></div><div class="project-card__body"><h3>Sistema Administrativo</h3><p>Sistema com dashboard, menu lateral, cadastro de clientes e serviços, status, tabela e formulário.</p><div class="tech-list"><span>CRUD</span><span>Dashboard</span><span>SaaS UI</span><span>Responsivo</span></div><div class="project-actions"><a href="projetos/admin-system.html">Ver projeto</a><a href="#" data-project-name="Sistema Administrativo">Quero parecido</a></div></div></article>
+          <article class="project-card reveal" data-category="sistema"><div class="project-card__visual visual-proposal"><i class="fa-solid fa-file-signature"></i><span>Projeto demonstrativo</span></div><div class="project-card__body"><h3>Propostas e Contratos</h3><p>Sistema com cadastro de clientes, propostas, funil, dashboard de valores e simulação de geração de contrato.</p><div class="tech-list"><span>Propostas</span><span>Contratos</span><span>Funil</span><span>JavaScript</span></div><div class="project-actions"><a href="projetos/proposals-contracts.html">Ver projeto</a><a href="#" data-project-name="Sistema de Propostas e Contratos">Quero parecido</a></div></div></article>
+          <article class="project-card reveal" data-category="sistema"><div class="project-card__visual visual-crm"><i class="fa-solid fa-users-gear"></i><span>Projeto demonstrativo</span></div><div class="project-card__body"><h3>CRM de Atendimento</h3><p>CRM com lista de clientes, histórico, status, próximo contato, funil, filtros, detalhes e formulário.</p><div class="tech-list"><span>CRM</span><span>Follow-up</span><span>Filtros</span><span>Funil</span></div><div class="project-actions"><a href="projetos/service-crm.html">Ver projeto</a><a href="#" data-project-name="CRM de Atendimento">Quero parecido</a></div></div></article>
+          <article class="project-card reveal" data-category="api"><div class="project-card__visual visual-api"><i class="fa-solid fa-code-branch"></i><span>Projeto demonstrativo</span></div><div class="project-card__body"><h3>API e Integrações</h3><p>Página técnica com endpoints, resposta JSON, status da API, logs, fluxo de integração e casos de uso.</p><div class="tech-list"><span>REST</span><span>JSON</span><span>Logs</span><span>Integrações</span></div><div class="project-actions"><a href="projetos/api-integrations.html">Ver projeto</a><a href="#" data-project-name="API e Integrações">Quero parecido</a></div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--surface" id="experiencia">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow"><i class="fa-solid fa-location-dot"></i> Experiência prática</span>
+          <h2>Contextos profissionais que ajudam a conectar tecnologia com problemas reais de negócio.</h2>
+          <p>Prefiro não citar empresas reais nos projetos do portfólio. Apresento minha vivência por áreas de atuação, mantendo o foco no que consigo construir para novos clientes.</p>
+        </div>
+        <div class="experience-grid">
+          <article class="experience-card reveal"><span>Vivência com</span><h3>Consultoria e serviços</h3><p>Atuação relacionada a soluções digitais, rotinas de dados, relatórios, dashboards, automações, publicação online e organização de processos.</p></article>
+          <article class="experience-card reveal"><span>Experiência prática em</span><h3>Dados e operação</h3><p>Contato com SQL, Power BI, Python, Power Query, DAX, relatórios, migração de tabelas e organização de indicadores.</p></article>
+          <article class="experience-card reveal"><span>Atuação relacionada a</span><h3>Automação de processos</h3><p>Vivência com Python, Power Automate, Excel, fluxos administrativos e apoio em relatórios e indicadores internos.</p></article>
+          <article class="experience-card reveal"><span>Contato com processos de</span><h3>Suporte e atendimento</h3><p>Experiência prática com suporte técnico, atendimento, CRM, treinamento de usuários, integrações e organização de informações de clientes.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="orcamento">
+      <div class="container quote-layout">
+        <div class="quote-copy reveal">
+          <span class="eyebrow"><i class="fa-brands fa-whatsapp"></i> Orçamento pelo WhatsApp</span>
+          <h2>Selecione o que você precisa e me chame com a mensagem pronta.</h2>
+          <p>Gosto de começar entendendo o problema real do negócio. Marque os serviços de interesse e o WhatsApp abre com uma mensagem organizada para facilitar a conversa.</p>
+        </div>
+        <form class="quote-card reveal" id="quoteForm">
+          <fieldset>
+            <legend>Quero contratar</legend>
+            <div class="selectable-grid">
+              <label><input type="checkbox" name="budgetService" value="Site institucional" /><span><i class="fa-solid fa-building"></i> Site institucional</span></label>
+              <label><input type="checkbox" name="budgetService" value="Landing page" /><span><i class="fa-solid fa-bullseye"></i> Landing page</span></label>
+              <label><input type="checkbox" name="budgetService" value="Sistema administrativo" /><span><i class="fa-solid fa-table-columns"></i> Sistema administrativo</span></label>
+              <label><input type="checkbox" name="budgetService" value="Dashboard" /><span><i class="fa-solid fa-chart-simple"></i> Dashboard</span></label>
+              <label><input type="checkbox" name="budgetService" value="Automação" /><span><i class="fa-solid fa-gears"></i> Automação</span></label>
+              <label><input type="checkbox" name="budgetService" value="API" /><span><i class="fa-solid fa-plug"></i> API</span></label>
+              <label><input type="checkbox" name="budgetService" value="Manutenção de sistema" /><span><i class="fa-solid fa-screwdriver-wrench"></i> Manutenção de sistema</span></label>
+              <label><input type="checkbox" name="budgetService" value="Outro" /><span><i class="fa-solid fa-plus"></i> Outro</span></label>
+            </div>
+          </fieldset>
+          <button class="btn btn--primary btn--lg" type="submit"><i class="fa-brands fa-whatsapp"></i> Solicitar orçamento</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section section--compact" id="contato">
+      <div class="container contact-panel reveal">
+        <div><span class="eyebrow"><i class="fa-solid fa-paper-plane"></i> Próximo passo</span><h2>Vamos conversar sobre uma solução simples, bonita e útil para o seu negócio?</h2><p>Posso ajudar com presença digital, sistemas internos, dashboards, automações, APIs e melhorias em projetos existentes.</p></div>
+        <a class="btn btn--primary btn--lg" href="#" data-whatsapp-message="Olá, vi seu portfólio e gostaria de conversar sobre um projeto."><i class="fa-brands fa-whatsapp"></i> Chamar no WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <p>© 2026 Eduardo Rodrigues Ferreira. Portfólio freelancer de desenvolvimento web, dados e automação.</p>
+      <div class="footer-links">
+        <a href="Curriculo_Eduardo_Rodrigues.pdf" download>Currículo</a>
+        <a href="mailto:eduardorodriguesferreira1240@gmail.com">E-mail</a>
+        <a href="https://github.com/EduardoRodriguesFerreira" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://linkedin.com/in/eduardo-rodrigues-03213b1b7" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,390 +1,521 @@
-/*=============== SHOW MENU ===============*/
-const navMenu = document.getElementById('nav-menu'),
-      navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close');
+const WHATSAPP_NUMBER = "5511993862231";
 
-// Menu show
-if(navToggle) {
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.add('show-menu');
+const root = document.documentElement;
+const themeToggle = document.getElementById("themeToggle");
+const navToggle = document.getElementById("navToggle");
+const navMenu = document.getElementById("navMenu");
+const quoteForm = document.getElementById("quoteForm");
+
+const formatCurrency = (value) =>
+  new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL", maximumFractionDigits: 0 }).format(value);
+
+function buildWhatsAppUrl(message) {
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}
+
+function getInitialTheme() {
+  const savedTheme = localStorage.getItem("portfolio-theme");
+  if (savedTheme === "light" || savedTheme === "dark") return savedTheme;
+  return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+}
+
+function updateThemeIcon() {
+  const icon = themeToggle?.querySelector("i");
+  if (!icon) return;
+  const isDark = root.getAttribute("data-theme") === "dark";
+  icon.className = isDark ? "fa-solid fa-sun" : "fa-solid fa-moon";
+  themeToggle.setAttribute("aria-label", isDark ? "Ativar tema claro" : "Ativar tema escuro");
+}
+
+function setupTheme() {
+  root.setAttribute("data-theme", getInitialTheme());
+  updateThemeIcon();
+  themeToggle?.addEventListener("click", () => {
+    const nextTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", nextTheme);
+    localStorage.setItem("portfolio-theme", nextTheme);
+    updateThemeIcon();
+  });
+}
+
+function setupMenu() {
+  navToggle?.addEventListener("click", () => {
+    const isOpen = navMenu?.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    navToggle.querySelector("i").className = isOpen ? "fa-solid fa-xmark" : "fa-solid fa-bars";
+  });
+
+  navMenu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("open");
+      navToggle?.setAttribute("aria-expanded", "false");
+      const icon = navToggle?.querySelector("i");
+      if (icon) icon.className = "fa-solid fa-bars";
     });
+  });
 }
 
-// Menu hidden
-if(navClose) {
-    navClose.addEventListener('click', () => {
-        navMenu.classList.remove('show-menu');
-    });
-}
+function setupReveal() {
+  const revealItems = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window)) {
+    revealItems.forEach((item) => item.classList.add("is-visible"));
+    return;
+  }
 
-/*=============== REMOVE MENU MOBILE ===============*/
-const navLink = document.querySelectorAll('.nav__link');
-
-const linkAction = () => {
-    const navMenu = document.getElementById('nav-menu');
-    navMenu.classList.remove('show-menu');
-}
-navLink.forEach(n => n.addEventListener('click', linkAction));
-
-/*=============== CHANGE BACKGROUND HEADER ===============*/
-const scrollHeader = () => {
-    const header = document.getElementById('header');
-    if(this.scrollY >= 50) {
-        header.classList.add('scroll-header');
-    } else {
-        header.classList.remove('scroll-header');
-    }
-}
-window.addEventListener('scroll', scrollHeader);
-
-/*=============== SHOW SCROLL UP ===============*/ 
-const scrollUp = () => {
-    const scrollUp = document.getElementById('scroll-up');
-    if(this.scrollY >= 350) {
-        scrollUp.classList.add('show-scroll');
-    } else {
-        scrollUp.classList.remove('show-scroll');
-    }
-}
-window.addEventListener('scroll', scrollUp);
-
-/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
-const sections = document.querySelectorAll('section[id]');
-
-const scrollActive = () => {
-    const scrollY = window.pageYOffset;
-
-    sections.forEach(current => {
-        const sectionHeight = current.offsetHeight,
-              sectionTop = current.offsetTop - 100,
-              sectionId = current.getAttribute('id'),
-              sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']');
-
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            sectionsClass.classList.add('active-link');
-        } else {
-            sectionsClass.classList.remove('active-link');
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
         }
-    });
+      });
+    },
+    { threshold: 0.12 }
+  );
+  revealItems.forEach((item) => observer.observe(item));
 }
-window.addEventListener('scroll', scrollActive);
 
-/*=============== TYPING EFFECT ===============*/
-const typingText = document.querySelector('.typing-text');
-const texts = [
-    'Analista de Dados',
-    'Full Stack Developer',
-    'Especialista em Power BI',
-    'Python Developer',
-    'Desenvolvedor Web'
-];
+function setupWhatsAppLinks() {
+  document.querySelectorAll("[data-whatsapp-message]").forEach((link) => {
+    link.setAttribute("href", buildWhatsAppUrl(link.dataset.whatsappMessage));
+    link.setAttribute("target", "_blank");
+    link.setAttribute("rel", "noreferrer");
+  });
 
-let textIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-let typingSpeed = 100;
+  document.querySelectorAll("[data-service-name]").forEach((link) => {
+    const service = link.dataset.serviceName;
+    link.setAttribute("href", buildWhatsAppUrl(`Olá, vi seu portfólio e tenho interesse no serviço de ${service}. Gostaria de conversar sobre um orçamento.`));
+    link.setAttribute("target", "_blank");
+    link.setAttribute("rel", "noreferrer");
+  });
 
-function type() {
-    const currentText = texts[textIndex];
-    
-    if(isDeleting) {
-        typingText.textContent = currentText.substring(0, charIndex - 1);
-        charIndex--;
-        typingSpeed = 50;
-    } else {
-        typingText.textContent = currentText.substring(0, charIndex + 1);
-        charIndex++;
-        typingSpeed = 100;
+  document.querySelectorAll("[data-project-name]").forEach((link) => {
+    const project = link.dataset.projectName;
+    link.setAttribute("href", buildWhatsAppUrl(`Olá, vi o projeto ${project} no seu portfólio e gostaria de algo parecido.`));
+    link.setAttribute("target", "_blank");
+    link.setAttribute("rel", "noreferrer");
+  });
+}
+
+function setupProjectFilters() {
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const projectCards = document.querySelectorAll(".project-card");
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      filterButtons.forEach((item) => item.classList.remove("active"));
+      button.classList.add("active");
+      const selectedFilter = button.dataset.filter;
+      projectCards.forEach((card) => {
+        const categories = card.dataset.category || "";
+        card.hidden = !(selectedFilter === "all" || categories.includes(selectedFilter));
+      });
+    });
+  });
+}
+
+function setupQuoteForm() {
+  quoteForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const selectedServices = Array.from(quoteForm.querySelectorAll('input[name="budgetService"]:checked')).map((input) => input.value);
+    const servicesText = selectedServices.length ? selectedServices.join(", ") : "ainda não defini exatamente o serviço";
+    const message = `Olá, vi seu portfólio e tenho interesse nos seguintes serviços: ${servicesText}. Gostaria de conversar sobre um orçamento.`;
+    window.open(buildWhatsAppUrl(message), "_blank", "noopener,noreferrer");
+  });
+}
+
+function setupFunctionalApps() {
+  const app = document.body.dataset.app;
+  if (app === "clinic-landing") setupLandingForm("clinicAppointmentForm", "Landing Page Cl\u00ednica");
+  if (app === "service-landing") setupLandingForm("serviceContactForm", "Landing Page Consultoria");
+  if (app === "financial-dashboard") setupFinancialDashboardApp();
+  if (app === "sales-dashboard") setupSalesDashboardApp();
+  if (app === "admin-system") setupAdminSystemApp();
+  if (app === "proposals-contracts") setupProposalApp();
+  if (app === "service-crm") setupCrmApp();
+  if (app === "api-integrations") setupConnectApiApp();
+}
+
+function setupLandingForm(formId, projectName) {
+  const form = document.getElementById(formId);
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    const name = data.get("name") || "Visitante";
+    const service = data.get("service") || "servi\u00e7o";
+    const company = data.get("company");
+    const email = data.get("email");
+    const phone = data.get("phone");
+    const unit = data.get("unit");
+    const date = data.get("date");
+    const time = data.get("time");
+    const budget = data.get("budget");
+    const deadline = data.get("deadline");
+    const notes = data.get("message");
+    const feedback = form.querySelector("[data-form-feedback]") || document.getElementById(`${formId}Feedback`) || document.getElementById("clinicFormFeedback");
+    const details = [
+      company && `Empresa: ${company}`,
+      email && `E-mail: ${email}`,
+      phone && `Telefone: ${phone}`,
+      unit && `Unidade: ${unit}`,
+      date && `Data preferida: ${formatFormDate(date)}`,
+      time && `Hor\u00e1rio: ${time}`,
+      budget && `Investimento: ${budget}`,
+      deadline && `Prazo: ${deadline}`,
+      notes && `Observa\u00e7\u00e3o: ${notes}`
+    ].filter(Boolean);
+    const message = [
+      `Ol\u00e1, meu nome \u00e9 ${name}.`,
+      `Vi o projeto ${projectName} no seu portf\u00f3lio e tenho interesse em ${service}.`,
+      details.length ? `Dados enviados: ${details.join(" | ")}.` : "",
+      "Gostaria de conversar sobre um projeto parecido."
+    ].filter(Boolean).join(" ");
+    if (feedback) feedback.textContent = "Mensagem pronta aberta no WhatsApp.";
+    window.open(buildWhatsAppUrl(message), "_blank", "noopener,noreferrer");
+  });
+}
+
+function formatFormDate(dateValue) {
+  if (!dateValue) return "";
+  const [year, month, day] = dateValue.split("-");
+  if (!year || !month || !day) return dateValue;
+  return `${day}/${month}/${year}`;
+}
+
+function setupFinancialDashboardApp() {
+  const periodFilter = document.getElementById("financePeriodFilter");
+  const table = document.getElementById("financeTable");
+  const chart = document.getElementById("financeChart");
+  const rows = [
+    { period: "Jan", type: "Receita", status: "Recebido", description: "Serviços digitais", amount: 42000 },
+    { period: "Jan", type: "Despesa", status: "Pago", description: "Ferramentas e operação", amount: 12000 },
+    { period: "Fev", type: "Receita", status: "Recebido", description: "Projetos web", amount: 56000 },
+    { period: "Fev", type: "Despesa", status: "Pago", description: "Operação mensal", amount: 18000 },
+    { period: "Mar", type: "Receita", status: "Pendente", description: "Contratos recorrentes", amount: 64000 },
+    { period: "Mar", type: "Despesa", status: "Pago", description: "Serviços terceiros", amount: 21000 }
+  ];
+
+  function render() {
+    const period = periodFilter?.value || "Todos";
+    const visible = period === "Todos" ? rows : rows.filter((item) => item.period === period);
+    const revenue = visible.filter((item) => item.type === "Receita").reduce((sum, item) => sum + item.amount, 0);
+    const expense = visible.filter((item) => item.type === "Despesa").reduce((sum, item) => sum + item.amount, 0);
+    const profit = revenue - expense;
+    const margin = revenue ? Math.round((profit / revenue) * 100) : 0;
+    setText("financeRevenue", formatCurrency(revenue));
+    setText("financeExpense", formatCurrency(expense));
+    setText("financeProfit", formatCurrency(profit));
+    setText("financeMargin", `${margin}%`);
+
+    if (chart) {
+      const periods = ["Jan", "Fev", "Mar"];
+      const values = periods.map((item) => rows.filter((row) => row.period === item && row.type === "Receita").reduce((sum, row) => sum + row.amount, 0));
+      const max = Math.max(...values);
+      chart.innerHTML = periods.map((item, index) => `<div class="chart-row"><span>${item}</span><i style="width:${Math.max(8, Math.round((values[index] / max) * 100))}%"></i><b>${formatCurrency(values[index])}</b></div>`).join("");
     }
-    
-    if(!isDeleting && charIndex === currentText.length) {
-        isDeleting = true;
-        typingSpeed = 2000; // Pause at end
-    } else if(isDeleting && charIndex === 0) {
-        isDeleting = false;
-        textIndex = (textIndex + 1) % texts.length;
-        typingSpeed = 500; // Pause before starting new word
+
+    if (table) {
+      table.innerHTML = visible.map((item) => `
+        <tr>
+          <td>${item.period}</td>
+          <td>${item.description}</td>
+          <td>${item.type}</td>
+          <td><span class="status ${item.status === "Pendente" ? "warn" : "ok"}">${item.status}</span></td>
+          <td>${formatCurrency(item.amount)}</td>
+        </tr>
+      `).join("");
     }
-    
-    setTimeout(type, typingSpeed);
+  }
+
+  periodFilter?.addEventListener("change", render);
+  render();
 }
 
-// Start typing effect when page loads
-document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(type, 1000);
-});
+function setupSalesDashboardApp() {
+  const monthFilter = document.getElementById("salesMonthFilter");
+  const channelFilter = document.getElementById("salesChannelFilter");
+  const table = document.getElementById("salesTable");
+  const chart = document.getElementById("salesChart");
+  const rows = [
+    { month: "Jan", channel: "WhatsApp", opportunity: "Landing page", leads: 42, conversion: 26, sales: 11, ticket: 2400 },
+    { month: "Fev", channel: "Instagram", opportunity: "Site institucional", leads: 58, conversion: 31, sales: 18, ticket: 3100 },
+    { month: "Mar", channel: "Indicação", opportunity: "Sistema interno", leads: 33, conversion: 42, sales: 14, ticket: 5200 },
+    { month: "Abr", channel: "Google", opportunity: "Dashboard", leads: 47, conversion: 34, sales: 16, ticket: 4300 }
+  ];
 
-/*=============== SKILLS ACCORDION ===============*/
-const skillsContent = document.querySelectorAll('.skills__content');
-const skillsHeader = document.querySelectorAll('.skills__header');
+  function render() {
+    const month = monthFilter?.value || "Todos";
+    const channel = channelFilter?.value || "Todos";
+    const visible = rows.filter((item) => (month === "Todos" || item.month === month) && (channel === "Todos" || item.channel === channel));
+    const leads = visible.reduce((sum, item) => sum + item.leads, 0);
+    const sales = visible.reduce((sum, item) => sum + item.sales, 0);
+    const averageTicket = sales ? Math.round(visible.reduce((sum, item) => sum + item.ticket * item.sales, 0) / sales) : 0;
+    const conversion = leads ? Math.round((sales / leads) * 100) : 0;
+    setText("salesLeads", leads);
+    setText("salesConversion", `${conversion}%`);
+    setText("salesClosed", sales);
+    setText("salesTicket", formatCurrency(averageTicket));
 
-function toggleSkills() {
-    let itemClass = this.parentNode.className;
-    
-    for(let i = 0; i < skillsContent.length; i++) {
-        skillsContent[i].className = 'skills__content skills__close';
+    if (chart) {
+      const max = Math.max(...rows.map((item) => item.leads));
+      chart.innerHTML = rows.map((item) => `<div class="chart-row"><span>${item.channel}</span><i style="width:${Math.max(8, Math.round((item.leads / max) * 100))}%"></i><b>${item.leads}</b></div>`).join("");
     }
-    
-    if(itemClass === 'skills__content skills__close') {
-        this.parentNode.className = 'skills__content skills__open';
+
+    if (table) {
+      table.innerHTML = visible.map((item) => `
+        <tr>
+          <td>${item.month}</td>
+          <td>${item.opportunity}</td>
+          <td>${item.channel}</td>
+          <td>${item.leads}</td>
+          <td>${item.conversion}%</td>
+          <td>${formatCurrency(item.ticket)}</td>
+        </tr>
+      `).join("");
     }
+  }
+
+  [monthFilter, channelFilter].forEach((control) => control?.addEventListener("change", render));
+  render();
 }
 
-skillsHeader.forEach((el) => {
-    el.addEventListener('click', toggleSkills);
-});
+function setupAdminSystemApp() {
+  const form = document.getElementById("adminForm");
+  const table = document.getElementById("adminTable");
+  const statusFilter = document.getElementById("adminStatusFilter");
+  let records = [
+    { client: "Cliente 01", service: "Site institucional", status: "Em andamento", value: 5400 },
+    { client: "Cliente 02", service: "Dashboard financeiro", status: "Concluído", value: 7200 },
+    { client: "Cliente 03", service: "Automação de relatório", status: "Pendente", value: 3900 }
+  ];
 
-// Open first skills section by default
-if(skillsContent.length > 0) {
-    skillsContent[0].classList.add('skills__open');
-}
-
-/*=============== SKILLS ANIMATION ON SCROLL ===============*/
-const skillsSection = document.getElementById('skills');
-const skillsBars = document.querySelectorAll('.skills__fill');
-
-const animateSkills = () => {
-    const skillsTop = skillsSection.offsetTop;
-    const skillsHeight = skillsSection.offsetHeight;
-    const scrollY = window.pageYOffset;
-    const windowHeight = window.innerHeight;
-    
-    if(scrollY > (skillsTop - windowHeight + skillsHeight / 2)) {
-        skillsBars.forEach(bar => {
-            bar.style.width = bar.parentElement.previousElementSibling.textContent;
-        });
+  function render() {
+    const filter = statusFilter?.value || "Todos";
+    const visible = filter === "Todos" ? records : records.filter((item) => item.status === filter);
+    setText("adminClients", new Set(records.map((item) => item.client)).size);
+    setText("adminServices", records.length);
+    setText("adminOpen", records.filter((item) => item.status !== "Concluído").length);
+    setText("adminValue", formatCurrency(records.reduce((sum, item) => sum + item.value, 0)));
+    if (table) {
+      table.innerHTML = visible.map((item) => `
+        <tr>
+          <td>${item.client}</td>
+          <td>${item.service}</td>
+          <td><span class="status ${item.status === "Concluído" ? "ok" : item.status === "Pendente" ? "warn" : "info"}">${item.status}</span></td>
+          <td>${formatCurrency(item.value)}</td>
+        </tr>
+      `).join("");
     }
+  }
+
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    records.unshift({
+      client: data.get("client") || "Novo cliente",
+      service: data.get("service") || "Novo serviço",
+      status: data.get("status") || "Pendente",
+      value: Number(data.get("value")) || 0
+    });
+    form.reset();
+    render();
+  });
+
+  statusFilter?.addEventListener("change", render);
+  render();
 }
 
-window.addEventListener('scroll', animateSkills);
+function setupProposalApp() {
+  const form = document.getElementById("proposalForm");
+  const statusFilter = document.getElementById("proposalStatusFilter");
+  const table = document.getElementById("proposalTable");
+  const pipeline = document.getElementById("proposalPipeline");
+  const preview = document.getElementById("contractPreview");
+  let proposals = [
+    { client: "Cliente Saúde", title: "Landing page com agendamento", value: 8900, status: "aprovada", owner: "Eduardo" },
+    { client: "Cliente Varejo", title: "Dashboard comercial", value: 5200, status: "enviada", owner: "Eduardo" },
+    { client: "Cliente Consultoria", title: "Automação de relatórios", value: 3600, status: "convertida", owner: "Eduardo" },
+    { client: "Cliente Serviços", title: "Sistema administrativo", value: 12400, status: "rascunho", owner: "Eduardo" },
+    { client: "Cliente Educação", title: "Portal de atendimento", value: 7200, status: "recusada", owner: "Eduardo" }
+  ];
 
-/*=============== SCROLL REVEAL ANIMATION ===============*/
-const sr = ScrollReveal({
-    origin: 'top',
-    distance: '60px',
-    duration: 2000,
-    delay: 200,
-    reset: false
-});
+  function render() {
+    const selectedStatus = statusFilter?.value || "todos";
+    const visible = selectedStatus === "todos" ? proposals : proposals.filter((item) => item.status === selectedStatus);
+    const total = proposals.length;
+    const approved = proposals.filter((item) => item.status === "aprovada" || item.status === "convertida").length;
+    const approvalRate = total ? Math.round((approved / total) * 100) : 0;
+    const forecast = proposals.filter((item) => item.status !== "recusada" && item.status !== "rascunho").reduce((sum, item) => sum + item.value, 0);
+    setText("proposalTotal", total);
+    setText("proposalApproval", `${approvalRate}%`);
+    setText("proposalForecast", formatCurrency(forecast));
+    setText("proposalContracts", proposals.filter((item) => item.status === "convertida").length);
 
-// Check if ScrollReveal is available
-if(typeof ScrollReveal !== 'undefined') {
-    sr.reveal('.home__data, .home__img, .about__content, .skills__content', {
-        origin: 'top',
-        interval: 100
-    });
-
-    sr.reveal('.experience__item', {
-        origin: 'left',
-        interval: 100
-    });
-
-    sr.reveal('.project__card', {
-        origin: 'bottom',
-        interval: 100
-    });
-
-    sr.reveal('.contact__card', {
-        origin: 'bottom',
-        interval: 100
-    });
-}
-
-/*=============== INTERSECTION OBSERVER FOR ANIMATIONS ===============*/
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe all sections
-const elementsToAnimate = document.querySelectorAll('.project__card, .experience__item, .skills__content, .contact__card');
-
-elementsToAnimate.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'all 0.6s ease';
-    observer.observe(el);
-});
-
-/*=============== CONTACT FORM ===============*/
-const contactForm = document.getElementById('contact-form');
-const contactMessage = document.getElementById('contact-message');
-
-if(contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Get form values
-        const name = contactForm.name.value;
-        const email = contactForm.email.value;
-        const message = contactForm.message.value;
-        
-        // Validate
-        if(name && email && message) {
-            // Show success message
-            contactMessage.textContent = 'Mensagem enviada com sucesso! ✓';
-            contactMessage.classList.add('success');
-            contactMessage.classList.remove('error');
-            
-            // Clear form
-            contactForm.reset();
-            
-            // Hide message after 5 seconds
-            setTimeout(() => {
-                contactMessage.textContent = '';
-                contactMessage.classList.remove('success');
-            }, 5000);
-            
-            // Here you would normally send the data to a server
-            console.log('Form data:', { name, email, message });
-            
-            // Example: Send to email service (requires backend)
-            // emailjs.send('service_id', 'template_id', {
-            //     from_name: name,
-            //     from_email: email,
-            //     message: message
-            // });
-            
-        } else {
-            contactMessage.textContent = 'Por favor, preencha todos os campos!';
-            contactMessage.classList.add('error');
-            contactMessage.classList.remove('success');
-            
-            setTimeout(() => {
-                contactMessage.textContent = '';
-                contactMessage.classList.remove('error');
-            }, 3000);
-        }
-    });
-}
-
-/*=============== SMOOTH SCROLL ===============*/
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        
-        if(target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-/*=============== PRELOADER (optional) ===============*/
-window.addEventListener('load', () => {
-    const preloader = document.querySelector('.preloader');
-    if(preloader) {
-        preloader.style.opacity = '0';
-        setTimeout(() => {
-            preloader.style.display = 'none';
-        }, 300);
+    if (table) {
+      table.innerHTML = visible.map((item) => `
+        <tr>
+          <td><strong>${item.title}</strong><br><small>${item.client}</small></td>
+          <td><span class="status ${statusClass(item.status)}">${item.status}</span></td>
+          <td>${formatCurrency(item.value)}</td>
+          <td>${item.owner}</td>
+          <td><div class="table-actions"><button class="mini-btn primary" type="button" data-contract="${proposals.indexOf(item)}">Gerar contrato</button><button class="mini-btn" type="button" data-next-status="${proposals.indexOf(item)}">Avançar</button></div></td>
+        </tr>
+      `).join("");
     }
-});
 
-/*=============== LAZY LOADING IMAGES ===============*/
-const images = document.querySelectorAll('img[data-src]');
-
-const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting) {
-            const img = entry.target;
-            img.src = img.dataset.src;
-            img.classList.add('loaded');
-            imageObserver.unobserve(img);
-        }
-    });
-});
-
-images.forEach(img => imageObserver.observe(img));
-
-/*=============== THEME TOGGLE (optional) ===============*/
-const themeButton = document.getElementById('theme-button');
-const darkTheme = 'dark-theme';
-const iconTheme = 'fa-sun';
-
-// Previously selected topic (if user selected)
-const selectedTheme = localStorage.getItem('selected-theme');
-const selectedIcon = localStorage.getItem('selected-icon');
-
-// Validate if the user previously chose a topic
-if(selectedTheme) {
-    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
-    if(themeButton) {
-        themeButton.classList[selectedIcon === 'fa-moon' ? 'add' : 'remove'](iconTheme);
+    if (pipeline) {
+      const statuses = ["rascunho", "enviada", "aprovada", "convertida", "recusada"];
+      pipeline.innerHTML = statuses.map((status) => {
+        const items = proposals.filter((item) => item.status === status);
+        return `<section class="pipeline-column"><h3>${status}</h3>${items.length ? items.map((item) => `<article class="deal-card"><strong>${item.client}</strong><small>${item.title} • ${formatCurrency(item.value)}</small></article>`).join("") : '<div class="empty-state">Sem itens</div>'}</section>`;
+      }).join("");
     }
-}
+  }
 
-// Activate / deactivate the theme manually with the button
-if(themeButton) {
-    themeButton.addEventListener('click', () => {
-        document.body.classList.toggle(darkTheme);
-        themeButton.classList.toggle(iconTheme);
-        
-        localStorage.setItem('selected-theme', document.body.classList.contains(darkTheme) ? 'dark' : 'light');
-        localStorage.setItem('selected-icon', themeButton.classList.contains(iconTheme) ? 'fa-moon' : 'fa-sun');
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    proposals.unshift({
+      client: data.get("client") || "Novo cliente",
+      title: data.get("title") || "Nova proposta",
+      value: Number(data.get("value")) || 0,
+      status: data.get("status") || "rascunho",
+      owner: data.get("owner") || "Eduardo"
     });
-}
+    form.reset();
+    render();
+  });
 
-/*=============== COUNTER ANIMATION ===============*/
-const counters = document.querySelectorAll('.about__box span');
-
-const countUp = (element) => {
-    const target = element.textContent;
-    const number = parseInt(target);
-    
-    if(isNaN(number)) return;
-    
-    let current = 0;
-    const increment = number / 50;
-    const timer = setInterval(() => {
-        current += increment;
-        if(current >= number) {
-            element.textContent = target;
-            clearInterval(timer);
-        } else {
-            element.textContent = Math.ceil(current) + '+';
-        }
-    }, 30);
-};
-
-// Trigger counter animation when in view
-const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting) {
-            countUp(entry.target);
-            counterObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-counters.forEach(counter => {
-    if(counter.textContent.includes('+')) {
-        counterObserver.observe(counter);
+  table?.addEventListener("click", (event) => {
+    const contractButton = event.target.closest("[data-contract]");
+    const nextButton = event.target.closest("[data-next-status]");
+    if (contractButton) {
+      const item = proposals[Number(contractButton.dataset.contract)];
+      if (item && preview) {
+        preview.innerHTML = `<h3>Contrato de prestação de serviços</h3><p><strong>Cliente:</strong> ${item.client}</p><p><strong>Objeto:</strong> ${item.title}</p><p><strong>Valor:</strong> ${formatCurrency(item.value)}</p><p>Este documento é uma simulação gerada automaticamente com base nos dados cadastrados na proposta.</p><p>Responsável pelo atendimento: ${item.owner}.</p>`;
+      }
     }
-});
+    if (nextButton) {
+      const item = proposals[Number(nextButton.dataset.nextStatus)];
+      if (!item) return;
+      const flow = ["rascunho", "enviada", "aprovada", "convertida"];
+      const current = flow.indexOf(item.status);
+      item.status = flow[current + 1] || "convertida";
+      render();
+    }
+  });
 
-/*=============== CONSOLE MESSAGE ===============*/
-console.log('%c👋 Olá! Bem-vindo ao meu portfólio!', 'color: #0ea5e9; font-size: 20px; font-weight: bold;');
-console.log('%cSe você está vendo isso, provavelmente também é um desenvolvedor 😄', 'color: #10b981; font-size: 14px;');
-console.log('%cVamos trabalhar juntos? Entre em contato!', 'color: #f59e0b; font-size: 14px;');
-
-/*=============== PERFORMANCE MONITORING ===============*/
-if('performance' in window) {
-    window.addEventListener('load', () => {
-        const perfData = window.performance.timing;
-        const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-        console.log(`⚡ Página carregada em ${pageLoadTime}ms`);
-    });
+  statusFilter?.addEventListener("change", render);
+  render();
 }
+
+function setupCrmApp() {
+  const form = document.getElementById("crmForm");
+  const stageFilter = document.getElementById("crmStageFilter");
+  const board = document.getElementById("crmBoard");
+  const table = document.getElementById("crmTable");
+  let clients = [
+    { name: "Cliente Saúde", contact: "Contato 01", stage: "Novo lead", next: "2026-05-25", note: "Quer landing page para agendamento" },
+    { name: "Cliente Varejo", contact: "Contato 02", stage: "Em atendimento", next: "2026-05-24", note: "Aguardando orçamento de dashboard" },
+    { name: "Cliente Serviços", contact: "Contato 03", stage: "Proposta enviada", next: "2026-05-28", note: "Sistema administrativo simples" },
+    { name: "Cliente Alimentação", contact: "Contato 04", stage: "Cliente ativo", next: "2026-06-03", note: "Manutenção mensal" }
+  ];
+
+  function render() {
+    const selectedStage = stageFilter?.value || "Todos";
+    const visible = selectedStage === "Todos" ? clients : clients.filter((item) => item.stage === selectedStage);
+    setText("crmLeads", clients.filter((item) => item.stage !== "Cliente ativo").length);
+    setText("crmActive", clients.filter((item) => item.stage === "Cliente ativo").length);
+    setText("crmFollowups", clients.filter((item) => item.next).length);
+    setText("crmTotal", clients.length);
+
+    if (board) {
+      const stages = ["Novo lead", "Em atendimento", "Proposta enviada", "Cliente ativo"];
+      board.innerHTML = stages.map((stage) => {
+        const items = clients.filter((item) => item.stage === stage);
+        return `<section class="pipeline-column"><h3>${stage}</h3>${items.length ? items.map((item) => `<article class="client-card"><strong>${item.name}</strong><small>${item.contact} • ${item.next}</small></article>`).join("") : '<div class="empty-state">Sem clientes</div>'}</section>`;
+      }).join("");
+    }
+
+    if (table) {
+      table.innerHTML = visible.map((item) => `<tr><td><strong>${item.name}</strong><br><small>${item.note}</small></td><td>${item.contact}</td><td><span class="status info">${item.stage}</span></td><td>${item.next}</td><td><button class="mini-btn primary" type="button" data-crm-next="${clients.indexOf(item)}">Avançar</button></td></tr>`).join("");
+    }
+  }
+
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    clients.unshift({
+      name: data.get("name") || "Novo cliente",
+      contact: data.get("contact") || "Contato",
+      stage: data.get("stage") || "Novo lead",
+      next: data.get("next") || "Sem data",
+      note: data.get("note") || "Sem observações"
+    });
+    form.reset();
+    render();
+  });
+
+  table?.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-crm-next]");
+    if (!button) return;
+    const item = clients[Number(button.dataset.crmNext)];
+    const flow = ["Novo lead", "Em atendimento", "Proposta enviada", "Cliente ativo"];
+    const current = flow.indexOf(item.stage);
+    item.stage = flow[current + 1] || "Cliente ativo";
+    render();
+  });
+
+  stageFilter?.addEventListener("change", render);
+  render();
+}
+
+function setupConnectApiApp() {
+  const endpointButtons = document.querySelectorAll("[data-endpoint]");
+  const responseBox = document.getElementById("apiResponse");
+  const logs = document.getElementById("apiLogs");
+  const responses = {
+    clientes: { status: "success", data: [{ id: 1, nome: "Cliente Saúde", status: "ativo" }, { id: 2, nome: "Cliente Varejo", status: "lead" }] },
+    pedidos: { status: "created", pedido_id: 2401, origem: "landing-page", dashboard_sync: true },
+    financeiro: { status: "success", receita: 184000, despesa: 72000, lucro: 112000 },
+    token: { access_token: "eyJhbGciOiJIUzI1NiJ9.demo", token_type: "Bearer", expires_in: 3600 }
+  };
+  let requestCount = 12842;
+
+  function renderResponse(endpoint) {
+    endpointButtons.forEach((button) => button.classList.toggle("active", button.dataset.endpoint === endpoint));
+    const payload = responses[endpoint] || responses.clientes;
+    if (responseBox) responseBox.textContent = JSON.stringify(payload, null, 2);
+    requestCount += 1;
+    setText("apiRequests", requestCount.toLocaleString("pt-BR"));
+    if (logs) {
+      const line = document.createElement("div");
+      line.className = "log-line";
+      line.innerHTML = `<span>${new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit", second: "2-digit" })}</span><span>${endpoint.toUpperCase()}</span><span class="status ok">200</span>`;
+      logs.prepend(line);
+    }
+  }
+
+  endpointButtons.forEach((button) => button.addEventListener("click", () => renderResponse(button.dataset.endpoint)));
+  renderResponse("clientes");
+}
+
+function setText(id, value) {
+  const element = document.getElementById(id);
+  if (element) element.textContent = value;
+}
+
+function statusClass(status) {
+  if (status === "aprovada" || status === "convertida") return "ok";
+  if (status === "recusada") return "danger";
+  if (status === "enviada") return "info";
+  return "warn";
+}
+
+setupTheme();
+setupMenu();
+setupReveal();
+setupProjectFilters();
+setupWhatsAppLinks();
+setupQuoteForm();
+setupFunctionalApps();

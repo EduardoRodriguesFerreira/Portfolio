@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Projeto demonstrativo de CRM de atendimento com clientes, histórico, status e follow-ups." />
+  <title>CRM de Atendimento | Projeto demonstrativo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="app-page" data-app="service-crm">
+  <header class="app-header">
+    <div class="container app-header__inner">
+      <a class="brand" href="../index.html#projetos"><span class="brand__mark">ER</span><span><b>CRM de Atendimento</b><small>Projeto demonstrativo</small></span></a>
+      <div class="app-header__actions">
+        <button class="icon-button theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema"><i class="fa-solid fa-sun"></i></button>
+        <a class="btn btn--outline" href="../index.html#projetos">Voltar</a>
+        <a class="btn btn--primary" href="#" data-project-name="CRM de Atendimento"><i class="fa-brands fa-whatsapp"></i> Quero parecido</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <div class="container">
+      <div class="app-shell">
+        <aside class="app-sidebar">
+          <div class="app-logo"><i class="fa-solid fa-users-gear"></i><span>ServiceCRM</span></div>
+          <a class="active" href="#funil"><i class="fa-solid fa-diagram-project"></i> Funil</a>
+          <a href="#clientes"><i class="fa-solid fa-address-book"></i> Clientes</a>
+          <a href="#novo-cliente"><i class="fa-solid fa-user-plus"></i> Novo cliente</a>
+          <a href="#detalhes"><i class="fa-solid fa-clock-rotate-left"></i> Detalhes</a>
+          <div class="app-sidebar__note">Solução fictícia baseada em problemas reais de atendimento e follow-up.</div>
+        </aside>
+
+        <section class="app-workspace">
+          <div class="app-topbar">
+            <div class="app-title">
+              <span><i class="fa-solid fa-bolt"></i> Projeto demonstrativo</span>
+              <h1>CRM de atendimento com funil e histórico</h1>
+              <p>Lista de clientes, histórico de atendimento, status, próximo contato, filtros, métricas e cadastro de novo cliente.</p>
+              <div class="stack"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>CRM</span><span>Funil</span></div>
+            </div>
+            <div class="app-toolbar">
+              <select class="app-control" id="crmStageFilter" aria-label="Filtrar etapa">
+                <option>Todos</option><option>Novo lead</option><option>Em atendimento</option><option>Proposta enviada</option><option>Cliente ativo</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="app-kpi-grid">
+            <article class="app-kpi"><small>Leads em aberto</small><strong id="crmLeads">0</strong><em>em andamento</em></article>
+            <article class="app-kpi"><small>Clientes ativos</small><strong id="crmActive">0</strong><em>base atual</em></article>
+            <article class="app-kpi"><small>Follow-ups</small><strong id="crmFollowups">0</strong><em>com data definida</em></article>
+            <article class="app-kpi"><small>Total</small><strong id="crmTotal">0</strong><em>contatos</em></article>
+          </div>
+
+          <div class="app-grid">
+            <div>
+              <section class="app-panel" id="funil">
+                <div class="app-panel__head"><div><h2>Funil de atendimento</h2><p>Visual por etapa para priorizar próximos contatos.</p></div></div>
+                <div class="pipeline-grid" id="crmBoard"></div>
+              </section>
+              <section class="app-panel" id="clientes">
+                <div class="app-panel__head"><div><h2>Clientes e histórico</h2><p>Tabela filtrável com status e próximo contato.</p></div></div>
+                <div class="app-table-wrap">
+                  <table class="app-table">
+                    <thead><tr><th>Cliente</th><th>Contato</th><th>Status</th><th>Próximo contato</th><th>Ação</th></tr></thead>
+                    <tbody id="crmTable"></tbody>
+                  </table>
+                </div>
+              </section>
+            </div>
+            <aside>
+              <form class="app-form" id="crmForm">
+                <div class="app-panel__head" id="novo-cliente"><div><h2>Novo cliente</h2><p>Cadastro funcional em memória.</p></div></div>
+                <label>Cliente<input name="name" placeholder="Cliente exemplo" required /></label>
+                <label>Contato<input name="contact" placeholder="Contato responsável" required /></label>
+                <label>Status<select name="stage"><option>Novo lead</option><option>Em atendimento</option><option>Proposta enviada</option><option>Cliente ativo</option></select></label>
+                <label>Próximo contato<input name="next" type="date" /></label>
+                <label>Histórico<textarea name="note" placeholder="Resumo do atendimento"></textarea></label>
+                <button class="btn btn--primary" type="submit"><i class="fa-solid fa-user-plus"></i> Cadastrar cliente</button>
+              </form>
+              <section class="app-panel" id="detalhes">
+                <div class="app-panel__head"><div><h2>Para quem serve</h2><p>Prestadores, equipes de atendimento, vendas consultivas e pequenos negócios.</p></div></div>
+                <ul class="features-list"><li><i class="fa-solid fa-check"></i> Organiza clientes e retornos.</li><li><i class="fa-solid fa-check"></i> Reduz perda de histórico.</li><li><i class="fa-solid fa-check"></i> Pode evoluir para login e banco de dados.</li></ul>
+              </section>
+            </aside>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="../script.js"></script>
+</body>
+</html>
